@@ -234,6 +234,9 @@ class FairnessRegMaster:
         y_loss = (1.0 / n_points) * mod.sum([(y[i] - x[i]) * (y[i] - x[i]) for i in idx_var])
         p_loss = (1.0 / n_points) * mod.sum([(p[i] - x[i]) * (p[i] - x[i]) for i in idx_var])
 
+        # Affine loss
+        aff_loss = (1.0 / n_points) * mod.sum([((1-alpha)*y[i] + alpha*p[i] - x[i]) * ((1-alpha)*y[i] + alpha*p[i] - x[i]) for i in idx_var])
+
         if _feasible and beta >= 0:
             # Constrain search on a ball.
             mod.add(p_loss <= beta)
@@ -241,7 +244,10 @@ class FairnessRegMaster:
         else:
             # Adds a regularization term to make sure the new targets are not too far from the actual
             # network's output.
-            mod.minimize(y_loss + (1.0 / alpha) * p_loss)
+            # mod.minimize(y_loss + (1.0 / alpha) * p_loss)
+
+            # Affine objective
+            mod.minimize(aff_loss)
 
             # 231020: Ball search.
             # First I compute the minimum range that assures feasibility and then impose
