@@ -2,7 +2,7 @@ import numpy as np
 from sklearn.preprocessing import MinMaxScaler, StandardScaler
 
 from source.data_gen import Dataset
-from source.data_gen import BALANCE_DATASET
+from source.data_gen import BALANCE_DATASET, FAIRREG_DATASET
 from source import macs, tfco_reg, tfco_cls, utils
 from source.masters import BalancedCountsMaster, FairnessRegMaster, FairnessClsMaster
 from source.models import regressors as rgs
@@ -12,7 +12,7 @@ from source.logger import CustomLogger
 
 class Validation:
 
-    def __init__(self, dataset, nfolds, mtype, ltype, iterations,
+    def __init__(self, dataset, nfolds, mtype, algo, ltype, iterations,
                  alpha, beta, initial_step, use_prob, scaler='minmax', test_size=0.2):
         """
         Evaluate the performance of the model on a rolling test set, with n_periods sets made of
@@ -22,6 +22,7 @@ class Validation:
         self.dataset = dataset
         self.nfolds = nfolds
         self.mtype = mtype
+        self.algo = algo
         self.ltype = ltype
         self.iterations = iterations
         self.alpha = alpha
@@ -53,6 +54,7 @@ class Validation:
             dataset=self.dataset,
             nfolds=self.nfolds,
             mtype=self.mtype,
+            algo=self.algo,
             ltype=self.ltype,
             iterations=self.iterations,
             alpha=self.alpha,
@@ -148,6 +150,43 @@ class Validation:
                 else:
                     raise ValueError(f'Unknown learner type "{self.ltype}"')
 
+            elif self.dataset in FAIRREG_DATASET:
+                print("Computing indicator matrices.")
+                I_train = utils.compute_indicator_matrix_r(xp_train)
+                I_test = utils.compute_indicator_matrix_r(xp_test)
+                didi_tr = utils.didi_r(y_train, I_train)
+                didi_ts = utils.didi_r(y_test, I_test)
+
+                # Build the master
+                if self.mtype == 'fairness':
+                    self.master = FairnessRegMaster(I_train, I_test, didi_tr, didi_ts, self.algo)
+                else:
+                    raise ValueError(f'Unknown master type "{self.mtype}"')
+
+                # Build the learner.
+                if self.ltype == 'cvx':
+                    self.learner = rgs.FairRegressor(self.alpha, I_train)
+
+                elif self.ltype == 'tfco':
+                    input_dim = x_train.shape[1]
+                    output_dim = 1
+                    self.learner = tfco_reg.TFCOFairReg(input_dim, output_dim, I_train, didi_tr)
+
+                elif self.ltype == 'lbrf':
+                    self.learner = rgs.LowBiasRandomForestLearner()
+
+                elif self.ltype == 'lr':
+                    self.learner = rgs.LRegressor()
+
+                elif self.ltype == 'gb':
+                    self.learner = rgs.GBTree()
+
+                elif self.ltype == 'nn':
+                    self.learner = rgs.Net((x_train.shape[1],), 1)
+
+                else:
+                    raise ValueError(f'Unknown learner type "{self.ltype}"')
+                    
             elif self.dataset == 'adult':
                 print("Computing indicator matrices.")
                 I_train = utils.compute_indicator_matrix_c(xp_train)
@@ -189,43 +228,6 @@ class Validation:
 
                 elif self.ltype == 'nn':
                     self.learner = cls.NeuralNetworkLearner(input_dim, output_dim)
-
-                else:
-                    raise ValueError(f'Unknown learner type "{self.ltype}"')
-
-            elif self.dataset == 'crime':
-                print("Computing indicator matrices.")
-                I_train = utils.compute_indicator_matrix_r(xp_train)
-                I_test = utils.compute_indicator_matrix_r(xp_test)
-                didi_tr = utils.didi_r(y_train, I_train)
-                didi_ts = utils.didi_r(y_test, I_test)
-
-                # Build the master
-                if self.mtype == 'fairness':
-                    self.master = FairnessRegMaster(I_train, I_test, didi_tr, didi_ts)
-                else:
-                    raise ValueError(f'Unknown master type "{self.mtype}"')
-
-                # Build the learner.
-                if self.ltype == 'cvx':
-                    self.learner = rgs.FairRegressor(self.alpha, I_train)
-
-                elif self.ltype == 'tfco':
-                    input_dim = x_train.shape[1]
-                    output_dim = 1
-                    self.learner = tfco_reg.TFCOFairReg(input_dim, output_dim, I_train, didi_tr)
-
-                elif self.ltype == 'lbrf':
-                    self.learner = rgs.LowBiasRandomForestLearner()
-
-                elif self.ltype == 'lr':
-                    self.learner = rgs.LRegressor()
-
-                elif self.ltype == 'gb':
-                    self.learner = rgs.GBTree()
-
-                elif self.ltype == 'nn':
-                    self.learner = rgs.Net((x_train.shape[1],), 1)
 
                 else:
                     raise ValueError(f'Unknown learner type "{self.ltype}"')
@@ -302,6 +304,43 @@ class Validation:
             else:
                 raise ValueError(f'Unknown learner type "{self.ltype}"')
 
+        elif self.dataset in FAIRREG_DATASET:
+            print("Computing indicator matrices.")
+            I_train = utils.compute_indicator_matrix_r(xp_train)
+            I_test = utils.compute_indicator_matrix_r(xp_test)
+            didi_tr = utils.didi_r(y_train, I_train)
+            didi_ts = utils.didi_r(y_test, I_test)
+
+            # Build the master
+            if self.mtype == 'fairness':
+                self.master = FairnessRegMaster(I_train, I_test, didi_tr, didi_ts, self.algo)
+            else:
+                raise ValueError(f'Unknown master type "{self.mtype}"')
+
+            # Build the learner.
+            if self.ltype == 'cvx':
+                self.learner = rgs.FairRegressor(self.alpha, I_train)
+
+            elif self.ltype == 'tfco':
+                input_dim = x_train.shape[1]
+                output_dim = 1
+                self.learner = tfco_reg.TFCOFairReg(input_dim, output_dim, I_train, didi_tr)
+
+            elif self.ltype == 'lbrf':
+                self.learner = rgs.LowBiasRandomForestLearner()
+
+            elif self.ltype == 'lr':
+                self.learner = rgs.LRegressor()
+
+            elif self.ltype == 'gb':
+                self.learner = rgs.GBTree()
+
+            elif self.ltype == 'nn':
+                self.learner = rgs.Net((x_train.shape[1],), 1)
+
+            else:
+                raise ValueError(f'Unknown learner type "{self.ltype}"')
+                
         elif self.dataset == 'adult':
             print("Computing indicator matrices.")
             I_train = utils.compute_indicator_matrix_c(xp_train)
@@ -343,43 +382,6 @@ class Validation:
 
             elif self.ltype == 'nn':
                 self.learner = cls.NeuralNetworkLearner(input_dim, output_dim)
-
-            else:
-                raise ValueError(f'Unknown learner type "{self.ltype}"')
-
-        elif self.dataset == 'crime':
-            print("Computing indicator matrices.")
-            I_train = utils.compute_indicator_matrix_r(xp_train)
-            I_test = utils.compute_indicator_matrix_r(xp_test)
-            didi_tr = utils.didi_r(y_train, I_train)
-            didi_ts = utils.didi_r(y_test, I_test)
-
-            # Build the master
-            if self.mtype == 'fairness':
-                self.master = FairnessRegMaster(I_train, I_test, didi_tr, didi_ts)
-            else:
-                raise ValueError(f'Unknown master type "{self.mtype}"')
-
-            # Build the learner.
-            if self.ltype == 'cvx':
-                self.learner = rgs.FairRegressor(self.alpha, I_train)
-
-            elif self.ltype == 'tfco':
-                input_dim = x_train.shape[1]
-                output_dim = 1
-                self.learner = tfco_reg.TFCOFairReg(input_dim, output_dim, I_train, didi_tr)
-
-            elif self.ltype == 'lbrf':
-                self.learner = rgs.LowBiasRandomForestLearner()
-
-            elif self.ltype == 'lr':
-                self.learner = rgs.LRegressor()
-
-            elif self.ltype == 'gb':
-                self.learner = rgs.GBTree()
-
-            elif self.ltype == 'nn':
-                self.learner = rgs.Net((x_train.shape[1],), 1)
 
             else:
                 raise ValueError(f'Unknown learner type "{self.ltype}"')

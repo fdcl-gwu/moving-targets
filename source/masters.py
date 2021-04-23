@@ -140,12 +140,13 @@ class BalancedCountsMaster:
 
 class FairnessRegMaster:
 
-    def __init__(self, I_train, I_test, didi_tr, didi_ts):
+    def __init__(self, I_train, I_test, didi_tr, didi_ts, algo):
         super(FairnessRegMaster, self).__init__()
         self.I_test = I_test
         self.I_train = I_train
         self.didi_tr = didi_tr
         self.didi_ts = didi_ts
+        self.algo = algo
 
         self.perc_constraint_value = 0.2
         self.constraint_value = self.perc_constraint_value * didi_tr
@@ -235,7 +236,9 @@ class FairnessRegMaster:
         p_loss = (1.0 / n_points) * mod.sum([(p[i] - x[i]) * (p[i] - x[i]) for i in idx_var])
 
         # Affine loss
-        aff_loss = (1.0 / n_points) * mod.sum([((1-alpha)*y[i] + alpha*p[i] - x[i]) * ((1-alpha)*y[i] + alpha*p[i] - x[i]) for i in idx_var])
+        if self.algo == 'affine':
+            aff_loss = (1.0 / n_points) * mod.sum([((1-alpha)*y[i] + alpha*p[i] - x[i]) * 
+                                                   ((1-alpha)*y[i] + alpha*p[i] - x[i]) for i in idx_var])
 
         if _feasible and beta >= 0:
             # Constrain search on a ball.
@@ -244,10 +247,12 @@ class FairnessRegMaster:
         else:
             # Adds a regularization term to make sure the new targets are not too far from the actual
             # network's output.
-            # mod.minimize(y_loss + (1.0 / alpha) * p_loss)
-
-            # Affine objective
-            mod.minimize(aff_loss)
+            if self.algo == 'movtar':
+                mod.minimize(y_loss + (1.0 / alpha) * p_loss)
+            elif self.algo == 'affine':
+                mod.minimize(aff_loss)
+            else:
+                raise ValueError(f'Unknown algorithm "{self.algo}"')
 
             # 231020: Ball search.
             # First I compute the minimum range that assures feasibility and then impose

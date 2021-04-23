@@ -9,3 +9,7 @@ results/*
 tensorflow_constrained_optimization/*
 Plots/*
 old_code/*
+
+# Temporary directories/ files
+tmp*
+.ipynb_checkpoints/

@@ -9,12 +9,18 @@ if __name__ == '__main__':
     # Configure options
 
     parser.add_argument('--dataset',
-                        choices=['iris', 'redwine', 'whitewine', 'shuttle', 'dota2', 'crime', 'adult'],
+                        choices=['iris', 'redwine', 'whitewine', 'shuttle', 'dota2', 'adult',
+                                 'crime', 'abalone', 'student', 'blackfriday'],
                         help='The dataset to be used')
 
     parser.add_argument('--mtype',
                         choices=['fairness', 'balance'],
                         help='The type of Master problem to be solved (not meaningful for cvx learner)')
+    
+    parser.add_argument('--algo',
+                        choices=['movtar', 'affine'],
+                        default='movtar',
+                        help='The type of algorithm in Master step implementation')
 
     parser.add_argument('--ltype',
                         default='lr',
@@ -59,7 +65,7 @@ if __name__ == '__main__':
     # Parse arguments
     args = parser.parse_args()
 
-    instance = Validation(args.dataset, args.nfolds, args.mtype, args.ltype,
+    instance = Validation(args.dataset, args.nfolds, args.mtype, args.algo, args.ltype,
                           args.iterations, args.alpha_, args.beta_, args.initial_step, args.use_prob)
     # Validation
     instance.validate()

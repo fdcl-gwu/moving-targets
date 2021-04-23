@@ -8,6 +8,7 @@ import numpy as np
 from source import utils
 
 from sklearn.preprocessing import LabelBinarizer
+from sklearn.preprocessing import OrdinalEncoder
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.model_selection import ShuffleSplit
 
@@ -187,6 +188,128 @@ def load_crime():
 
     return x, xp, y
 
+
+def load_abalone():
+    """
+    Read data from csv file and return them as a numpy arrays.
+    """
+    
+    # LOAD DATA FROM FILE.
+    filename = os.path.join('resources', 'abalone.csv')
+    data = pd.read_csv(filename, header=0, sep=',', skipinitialspace=True)
+    data = data.sample(frac=1, random_state=42)
+    targets = ['Rings']
+    pfeatures = ['Sex']
+    # Convert to numbers, can also use sklearn.preprocessing.OrdinalEncoder
+    data['Sex'] = data['Sex'].map({'M': 0, 'F':1, 'I':2})
+
+    # Drop rows with no associated attribute to be predicted.
+    dataset = data.dropna(subset=targets, axis=0).reset_index(drop=True)
+    feat_to_remove = targets + pfeatures
+
+    # Prepare the feature dataset.
+    features = [f for f in dataset.columns if f not in feat_to_remove]
+    dataset = dataset[features + pfeatures + targets]
+
+    # Force all types to float.
+    for c in dataset.columns:
+        dataset[c] = dataset[c].astype(float)
+
+    x, xp, y = dataset[features].values, dataset[pfeatures].values, dataset[targets].values
+
+    return x, xp, y
+
+
+def load_student():
+    """
+    Read data from csv file and return them as a numpy arrays.
+    """
+    
+    # LOAD DATA FROM FILE.
+    filename = os.path.join('resources', 'student-por.csv')
+    data = pd.read_csv(filename, header=0, sep=';', skipinitialspace=True)
+    data = data.sample(frac=1, random_state=42)
+    targets = ['G3']
+    pfeatures = ['sex']
+
+    # Drop rows with no associated attribute to be predicted.
+    dataset = data.dropna(subset=targets, axis=0).reset_index(drop=True)
+    feat_to_remove = [
+        'address', 'famsize', 'Pstatus', 'guardian', 'studytime', 'paid',
+        'activities', 'nursery', 'internet', 'romantic', 'famrel', 'freetime'
+    ]
+    feat_to_remove += targets + pfeatures
+
+    # Prepare the feature dataset.
+    features = [f for f in dataset.columns if f not in feat_to_remove]
+    
+    # Convert to numbers using OrdinalEncoder
+    feat_dataset = dataset[features + pfeatures]
+    enc = OrdinalEncoder()
+
+    # Encode the categorical features of the data.
+    _df = feat_dataset.select_dtypes(include=['object']).copy()
+    cat_df = pd.DataFrame(enc.fit_transform(_df.values), columns=list(_df.columns))
+    # Select numerical features of the data.
+    num_df = feat_dataset.select_dtypes(exclude=['object']).copy()
+    
+    # Force all types to float.
+    dataset = pd.concat([num_df, cat_df, dataset[targets]], axis=1)
+    for c in dataset.columns:
+        dataset[c] = dataset[c].astype(float)
+
+    x, xp, y = dataset[features].values, dataset[pfeatures].values, dataset[targets].values
+
+    return x, xp, y
+
+
+def load_black_friday():
+    """
+    Read data from csv file and return them as a numpy arrays.
+    """
+    
+    # LOAD DATA FROM FILE.
+    filename = os.path.join('resources', 'black-friday.csv')
+    data = pd.read_csv(filename, header=0, sep=',', skipinitialspace=True)
+    data = data.sample(frac=1, random_state=42)
+    targets = ['Purchase']
+    pfeatures = ['Gender']
+
+    # Drop rows with no associated attribute to be predicted.
+    dataset = data.dropna(subset=targets, axis=0).reset_index(drop=True)
+    # Remaining NaN values for Product_Category
+    dataset = dataset.fillna(0)
+    # New feature to contain number of times a product has been bought
+    dataset['Product_ID_Count'] = dataset['Product_ID'].map(dataset['Product_ID'].value_counts())
+    
+    feat_to_remove = [
+        'User_ID', 'Product_ID'
+    ]
+    feat_to_remove += targets + pfeatures
+
+    # Prepare the feature dataset.
+    features = [f for f in dataset.columns if f not in feat_to_remove]
+    
+    # Convert to numbers using OrdinalEncoder
+    feat_dataset = dataset[features + pfeatures]
+    enc = OrdinalEncoder()
+
+    # Encode the categorical features of the data.
+    _df = feat_dataset.select_dtypes(include=['object']).copy()
+    cat_df = pd.DataFrame(enc.fit_transform(_df.values), columns=list(_df.columns))
+    # Select numerical features of the data.
+    num_df = feat_dataset.select_dtypes(exclude=['object']).copy()
+    
+    # Force all types to float.
+    dataset = pd.concat([num_df, cat_df, dataset[targets]], axis=1)
+    for c in dataset.columns:
+        dataset[c] = dataset[c].astype(float)
+
+    x, xp, y = dataset[features].values, dataset[pfeatures].values, dataset[targets].values
+
+    return x, xp, y
+
+
 # ======================================================================
 # Fair Classification data.
 # ======================================================================
@@ -258,7 +381,17 @@ dataset_loaders = {
     'dota': load_dota_data,
     'adult': load_adult,
     'crime': load_crime,
+    'abalone': load_abalone,
+    'student': load_student,
+    'blackfriday': load_black_friday
 }
+
+FAIRREG_DATASET = [
+    'crime',
+    'abalone',
+    'student',
+    'blackfriday'
+]
 
 
 class Dataset():
