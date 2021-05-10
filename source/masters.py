@@ -232,13 +232,37 @@ class FairnessRegMaster:
         mod.add_constraint(constraint <= self.constraint_value, ctname='fairness_cnst')
 
         # Objective Function.
-        y_loss = (1.0 / n_points) * mod.sum([(y[i] - x[i]) * (y[i] - x[i]) for i in idx_var])
-        p_loss = (1.0 / n_points) * mod.sum([(p[i] - x[i]) * (p[i] - x[i]) for i in idx_var])
+        # y_loss = (1.0 / n_points) * mod.sum([(y[i] - x[i]) * (y[i] - x[i]) for i in idx_var])
+        # p_loss = (1.0 / n_points) * mod.sum([(p[i] - x[i]) * (p[i] - x[i]) for i in idx_var])
+        y_loss = (1.0 / n_points) * mod.sum([mod.abs(y[i] - x[i]) for i in idx_var])
+        p_loss = (1.0 / n_points) * mod.sum([mod.abs(p[i] - x[i]) for i in idx_var])
+
+        # Boolean variables for huber loss condition
+        # delta = 0.5
+        # b_y = mod.binary_var_list(keys=idx_var, name='b_y')
+        # b_p = mod.binary_var_list(keys=idx_var, name='b_p')
+        # h_y = mod.continuous_var_list(keys=idx_var, lb=0.0, ub=1.0, name='h_y')
+        # h_p = mod.continuous_var_list(keys=idx_var, lb=0.0, ub=1.0, name='h_p')
+        # for i in idx_var:
+        #     mod.add_constraint((2*b_y[i] - 1)*(mod.abs(y[i] - x[i]) - delta) <= 0)
+        #     mod.add_constraint((2*b_p[i] - 1)*(mod.abs(p[i] - x[i]) - delta) <= 0)
+        #     mod.add_if_then(b_y[i] == 1, h_y[i] - (y[i] - x[i]) * (y[i] - x[i]) / 2 == 0)
+        #     mod.add_if_then(b_y[i] == 0, h_y[i] - delta * (mod.abs(y[i] - x[i]) - delta/2) == 0)
+        #     mod.add_if_then(b_p[i] == 1, h_p[i] - (p[i] - x[i]) * (p[i] - x[i]) / 2 == 0)
+        #     mod.add_if_then(b_p[i] == 0, h_p[i] - delta * (mod.abs(p[i] - x[i]) - delta/2) == 0)
+        # y_loss = (1.0 / n_points) * mod.sum([b_y[i] * (y[i] - x[i]) * (y[i] - x[i]) / 2 +
+        #                                      (1-b_y[i]) * delta * (mod.abs(y[i] - x[i]) - delta/2) for i in idx_var])
+        # p_loss = (1.0 / n_points) * mod.sum([b_p[i] * (p[i] - x[i]) * (p[i] - x[i]) / 2 +
+        #                                      (1-b_p[i]) * delta * (mod.abs(p[i] - x[i]) - delta/2) for i in idx_var])
+        # y_loss = (1.0 / n_points) * mod.sum([h_y[i] for i in idx_var])
+        # p_loss = (1.0 / n_points) * mod.sum([h_p[i] for i in idx_var])
 
         # Affine loss
         if self.algo == 'affine':
-            aff_loss = (1.0 / n_points) * mod.sum([((1-alpha)*y[i] + alpha*p[i] - x[i]) * 
-                                                   ((1-alpha)*y[i] + alpha*p[i] - x[i]) for i in idx_var])
+            # aff_loss = (1.0 / n_points) * mod.sum([((1-alpha)*y[i] + alpha*p[i] - x[i]) * 
+            #                                        ((1-alpha)*y[i] + alpha*p[i] - x[i]) for i in idx_var])
+            aff_loss = (1.0 / n_points) * mod.sum([mod.abs((1-alpha)*y[i] + alpha*p[i] - x[i])
+                                                    for i in idx_var])
 
         if _feasible and beta >= 0:
             # Constrain search on a ball.
