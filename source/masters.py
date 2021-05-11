@@ -6,6 +6,7 @@ import numpy as np
 from docplex.mp.model import Model as CPModel
 from docplex.mp.model import DOcplexException
 from sklearn.metrics import accuracy_score, r2_score, mean_squared_error
+import cvxpy as cp
 
 from source import utils
 
@@ -140,13 +141,14 @@ class BalancedCountsMaster:
 
 class FairnessRegMaster:
 
-    def __init__(self, I_train, I_test, didi_tr, didi_ts, algo):
+    def __init__(self, I_train, I_test, didi_tr, didi_ts, algo, implement):
         super(FairnessRegMaster, self).__init__()
         self.I_test = I_test
         self.I_train = I_train
         self.didi_tr = didi_tr
         self.didi_ts = didi_ts
         self.algo = algo
+        self.implement = implement
 
         self.perc_constraint_value = 0.2
         self.constraint_value = self.perc_constraint_value * didi_tr
@@ -203,102 +205,135 @@ class FairnessRegMaster:
 
         # Determine feasibility
         _feasible = (utils.didi_r(p, self.I_train) <= self.constraint_value)
-
-        # Model declaration.
-        mod = CPModel('Fairness Reg Problem')
-
-        # Set a time limit.
-        mod.parameters.timelimit = _CPLEX_TIME_LIMIT
-
-        # Variable declaration.
         n_points = len(y)
         idx_var = [i for i in range(n_points)]
-        x = mod.continuous_var_list(keys=idx_var, lb=0.0, ub=1.0, name='y')
 
-        # Fairness constraint: instead of adding a penalization term in the objective function - as done by
-        # Phebe et al - I impose the fairness term to stay below a certain threshold.
-        constraint = .0
-        abs_val = mod.continuous_var_list(keys=self.I_train.keys())
-        for key, val in self.I_train.items():
-            Np = np.sum(val)
-            if Np > 0:
-                tmp = (1.0 / n_points) * mod.sum(x) - \
-                      (1.0 / Np) * mod.sum([val[j] * x[j] for j in idx_var])
-                # Linearization of the absolute value.
-                mod.add_constraint(abs_val[key] >= tmp)
-                mod.add_constraint(abs_val[key] >= -tmp)
+        if self.implement == 'cvxpy':
+            ## CVXPY
+            x = cp.Variable(n_points, nonneg=True)
 
-        constraint += mod.sum(abs_val)
-        mod.add_constraint(constraint <= self.constraint_value, ctname='fairness_cnst')
+            list_cons = [x <= 1.]
+            constraint = .0
+            abs_val = cp.Variable(len(self.I_train.keys()))
+            for key, val in enumerate(self.I_train.values()):
+                Np = np.sum(val)
+                if Np > 0:
+                    tmp = (1.0 / n_points) * cp.sum(x) - \
+                          (1.0 / Np) * cp.sum(cp.multiply(val, x))
+                    # Linearization of the absolute value.
+                    list_cons.append(abs_val[key] >= tmp)
+                    list_cons.append(abs_val[key] >= -tmp)
+                    # constraint += tmp
 
-        # Objective Function.
-        # y_loss = (1.0 / n_points) * mod.sum([(y[i] - x[i]) * (y[i] - x[i]) for i in idx_var])
-        # p_loss = (1.0 / n_points) * mod.sum([(p[i] - x[i]) * (p[i] - x[i]) for i in idx_var])
-        y_loss = (1.0 / n_points) * mod.sum([mod.abs(y[i] - x[i]) for i in idx_var])
-        p_loss = (1.0 / n_points) * mod.sum([mod.abs(p[i] - x[i]) for i in idx_var])
+            constraint += cp.sum(abs_val)
+            list_cons.append(constraint <= self.constraint_value)
 
-        # Boolean variables for huber loss condition
-        # delta = 0.5
-        # b_y = mod.binary_var_list(keys=idx_var, name='b_y')
-        # b_p = mod.binary_var_list(keys=idx_var, name='b_p')
-        # h_y = mod.continuous_var_list(keys=idx_var, lb=0.0, ub=1.0, name='h_y')
-        # h_p = mod.continuous_var_list(keys=idx_var, lb=0.0, ub=1.0, name='h_p')
-        # for i in idx_var:
-        #     mod.add_constraint((2*b_y[i] - 1)*(mod.abs(y[i] - x[i]) - delta) <= 0)
-        #     mod.add_constraint((2*b_p[i] - 1)*(mod.abs(p[i] - x[i]) - delta) <= 0)
-        #     mod.add_if_then(b_y[i] == 1, h_y[i] - (y[i] - x[i]) * (y[i] - x[i]) / 2 == 0)
-        #     mod.add_if_then(b_y[i] == 0, h_y[i] - delta * (mod.abs(y[i] - x[i]) - delta/2) == 0)
-        #     mod.add_if_then(b_p[i] == 1, h_p[i] - (p[i] - x[i]) * (p[i] - x[i]) / 2 == 0)
-        #     mod.add_if_then(b_p[i] == 0, h_p[i] - delta * (mod.abs(p[i] - x[i]) - delta/2) == 0)
-        # y_loss = (1.0 / n_points) * mod.sum([b_y[i] * (y[i] - x[i]) * (y[i] - x[i]) / 2 +
-        #                                      (1-b_y[i]) * delta * (mod.abs(y[i] - x[i]) - delta/2) for i in idx_var])
-        # p_loss = (1.0 / n_points) * mod.sum([b_p[i] * (p[i] - x[i]) * (p[i] - x[i]) / 2 +
-        #                                      (1-b_p[i]) * delta * (mod.abs(p[i] - x[i]) - delta/2) for i in idx_var])
-        # y_loss = (1.0 / n_points) * mod.sum([h_y[i] for i in idx_var])
-        # p_loss = (1.0 / n_points) * mod.sum([h_p[i] for i in idx_var])
+            # y_loss = (1.0 / n_points) * cp.sum_squares(y - x)
+            # p_loss = (1.0 / n_points) * cp.sum_squares(p - x)
+            huber_M = 0.5
+            y_loss = (1.0 / n_points) * cp.sum(cp.huber(y - x, huber_M))
+            p_loss = (1.0 / n_points) * cp.sum(cp.huber(p - x, huber_M))
 
-        # Affine loss
-        if self.algo == 'affine':
-            # aff_loss = (1.0 / n_points) * mod.sum([((1-alpha)*y[i] + alpha*p[i] - x[i]) * 
-            #                                        ((1-alpha)*y[i] + alpha*p[i] - x[i]) for i in idx_var])
-            aff_loss = (1.0 / n_points) * mod.sum([mod.abs((1-alpha)*y[i] + alpha*p[i] - x[i])
-                                                    for i in idx_var])
+            # Affine loss
+            if self.algo == 'affine':
+                # aff_loss = (1.0 / n_points) * cp.sum_squares((1-alpha)*y + alpha*p - x)
+                aff_loss = (1.0 / n_points) * cp.sum(cp.huber((1-alpha)*y + alpha*p - x, huber_M))
 
-        if _feasible and beta >= 0:
-            # Constrain search on a ball.
-            mod.add(p_loss <= beta)
-            mod.minimize(y_loss)
-        else:
-            # Adds a regularization term to make sure the new targets are not too far from the actual
-            # network's output.
-            if self.algo == 'movtar':
-                mod.minimize(y_loss + (1.0 / alpha) * p_loss)
-            elif self.algo == 'affine':
-                mod.minimize(aff_loss)
+            if _feasible and beta >= 0:
+                list_cons.append(p_loss <= beta)
+                obj = cp.Minimize(y_loss)
             else:
-                raise ValueError(f'Unknown algorithm "{self.algo}"')
+                if self.algo == 'movtar':
+                    obj = cp.Minimize(y_loss + (1.0 / alpha) * p_loss)
+                elif self.algo == 'affine':
+                    obj = cp.Minimize(aff_loss)
+                else:
+                    raise ValueError(f'Unknown algorithm "{self.algo}"')
 
-            # 231020: Ball search.
-            # First I compute the minimum range that assures feasibility and then impose
-            # it as a costraint.
-            # mod2 = mod.clone("Radius model")
-            # mod2.minimize(n_points * p_loss)
-            # mod2.solve()
-            # r = mod2.objective_value
-            # print("Objective value (radius): %.2f" % r)
+            prob = cp.Problem(obj, list_cons)
+            prob.solve(solver=cp.CPLEX)  # Returns the optimal value.
 
-            # mod.add(p_loss <= (1.05 * r))
-            # mod.minimize(y_loss)
+            # Check solution.
+            # self._check_solution(prob)
 
-        # Problem solving.
-        # self.logger.info("Solving Opt Model...")
-        mod.solve()
+            y_opt = np.array(x.value)
 
-        # Check solution.
-        self._check_solution(mod)
+        elif self.implement == 'cplex':
+            # Model declaration.
+            mod = CPModel('Fairness Reg Problem')
+            # Set a time limit.
+            mod.parameters.timelimit = _CPLEX_TIME_LIMIT
 
-        # Obtain the adjusted targets.
-        y_opt = np.array([x[i].solution_value for i in range(n_points)])
+            # Variable declaration.
+            x = mod.continuous_var_list(keys=idx_var, lb=0.0, ub=1.0, name='y')
+
+            # Fairness constraint: instead of adding a penalization term in the objective function - as done by
+            # Phebe et al - I impose the fairness term to stay below a certain threshold.
+            constraint = .0
+            abs_val = mod.continuous_var_list(keys=self.I_train.keys())
+            for key, val in self.I_train.items():
+                Np = np.sum(val)
+                if Np > 0:
+                    tmp = (1.0 / n_points) * mod.sum(x) - \
+                          (1.0 / Np) * mod.sum([val[j] * x[j] for j in idx_var])
+                    # Linearization of the absolute value.
+                    mod.add_constraint(abs_val[key] >= tmp)
+                    mod.add_constraint(abs_val[key] >= -tmp)
+
+            constraint += mod.sum(abs_val)
+            mod.add_constraint(constraint <= self.constraint_value, ctname='fairness_cnst')
+
+            # Objective Function.
+            # y_loss = (1.0 / n_points) * mod.sum([(y[i] - x[i]) * (y[i] - x[i]) for i in idx_var])
+            # p_loss = (1.0 / n_points) * mod.sum([(p[i] - x[i]) * (p[i] - x[i]) for i in idx_var])
+            y_loss = (1.0 / n_points) * mod.sum([mod.abs(y[i] - x[i]) for i in idx_var])
+            p_loss = (1.0 / n_points) * mod.sum([mod.abs(p[i] - x[i]) for i in idx_var])
+
+            # Affine loss
+            if self.algo == 'affine':
+                # aff_loss = (1.0 / n_points) * mod.sum([((1-alpha)*y[i] + alpha*p[i] - x[i]) * 
+                #                                        ((1-alpha)*y[i] + alpha*p[i] - x[i]) for i in idx_var])
+                aff_loss = (1.0 / n_points) * mod.sum([mod.abs((1-alpha)*y[i] + alpha*p[i] - x[i])
+                                                        for i in idx_var])
+
+            if _feasible and beta >= 0:
+                # Constrain search on a ball.
+                mod.add(p_loss <= beta)
+                mod.minimize(y_loss)
+            else:
+                # Adds a regularization term to make sure the new targets are not too far from the actual
+                # network's output.
+                if self.algo == 'movtar':
+                    mod.minimize(y_loss + (1.0 / alpha) * p_loss)
+                elif self.algo == 'affine':
+                    mod.minimize(aff_loss)
+                else:
+                    raise ValueError(f'Unknown algorithm "{self.algo}"')
+
+                # 231020: Ball search.
+                # First I compute the minimum range that assures feasibility and then impose
+                # it as a costraint.
+                # mod2 = mod.clone("Radius model")
+                # mod2.minimize(n_points * p_loss)
+                # mod2.solve()
+                # r = mod2.objective_value
+                # print("Objective value (radius): %.2f" % r)
+
+                # mod.add(p_loss <= (1.05 * r))
+                # mod.minimize(y_loss)
+
+            # Problem solving.
+            # self.logger.info("Solving Opt Model...")
+            mod.solve()
+
+            # Check solution.
+            self._check_solution(mod)
+
+            # Obtain the adjusted targets.
+            y_opt = np.array([x[i].solution_value for i in range(n_points)])
+
+        else:
+            raise ValueError(f'Unknown implementation model "{self.implement}"')
 
         return y_opt
 

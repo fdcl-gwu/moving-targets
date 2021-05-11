@@ -17,6 +17,11 @@ if __name__ == '__main__':
                         choices=['fairness', 'balance'],
                         help='The type of Master problem to be solved (not meaningful for cvx learner)')
     
+    parser.add_argument('--implement',
+                        choices=['cvxpy', 'cplex'],
+                        default='cplex',
+                        help='The type of optimization library/ model used')
+
     parser.add_argument('--algo',
                         choices=['movtar', 'affine'],
                         default='movtar',
@@ -65,7 +70,7 @@ if __name__ == '__main__':
     # Parse arguments
     args = parser.parse_args()
 
-    instance = Validation(args.dataset, args.nfolds, args.mtype, args.algo, args.ltype,
+    instance = Validation(args.dataset, args.nfolds, args.mtype, args.implement, args.algo, args.ltype,
                           args.iterations, args.alpha_, args.beta_, args.initial_step, args.use_prob)
     # Validation
     instance.validate()

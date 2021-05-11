@@ -12,7 +12,7 @@ from source.logger import CustomLogger
 
 class Validation:
 
-    def __init__(self, dataset, nfolds, mtype, algo, ltype, iterations,
+    def __init__(self, dataset, nfolds, mtype, implement, algo, ltype, iterations,
                  alpha, beta, initial_step, use_prob, scaler='minmax', test_size=0.2):
         """
         Evaluate the performance of the model on a rolling test set, with n_periods sets made of
@@ -22,6 +22,7 @@ class Validation:
         self.dataset = dataset
         self.nfolds = nfolds
         self.mtype = mtype
+        self.implement = implement
         self.algo = algo
         self.ltype = ltype
         self.iterations = iterations
@@ -159,7 +160,7 @@ class Validation:
 
                 # Build the master
                 if self.mtype == 'fairness':
-                    self.master = FairnessRegMaster(I_train, I_test, didi_tr, didi_ts, self.algo)
+                    self.master = FairnessRegMaster(I_train, I_test, didi_tr, didi_ts, self.algo, self.implement)
                 else:
                     raise ValueError(f'Unknown master type "{self.mtype}"')
 
@@ -313,7 +314,7 @@ class Validation:
 
             # Build the master
             if self.mtype == 'fairness':
-                self.master = FairnessRegMaster(I_train, I_test, didi_tr, didi_ts, self.algo)
+                self.master = FairnessRegMaster(I_train, I_test, didi_tr, didi_ts, self.algo, self.implement)
             else:
                 raise ValueError(f'Unknown master type "{self.mtype}"')
 
