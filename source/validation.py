@@ -12,7 +12,7 @@ from source.logger import CustomLogger
 
 class Validation:
 
-    def __init__(self, dataset, nfolds, mtype, implement, algo, ltype, iterations,
+    def __init__(self, dataset, nfolds, mtype, implement, loss, algo, ltype, iterations,
                  alpha, beta, initial_step, use_prob, scaler='minmax', test_size=0.2):
         """
         Evaluate the performance of the model on a rolling test set, with n_periods sets made of
@@ -23,6 +23,7 @@ class Validation:
         self.nfolds = nfolds
         self.mtype = mtype
         self.implement = implement
+        self.loss = loss
         self.algo = algo
         self.ltype = ltype
         self.iterations = iterations
@@ -55,6 +56,8 @@ class Validation:
             dataset=self.dataset,
             nfolds=self.nfolds,
             mtype=self.mtype,
+            implement=self.implement,
+            loss=self.loss,
             algo=self.algo,
             ltype=self.ltype,
             iterations=self.iterations,
@@ -160,7 +163,7 @@ class Validation:
 
                 # Build the master
                 if self.mtype == 'fairness':
-                    self.master = FairnessRegMaster(I_train, I_test, didi_tr, didi_ts, self.algo, self.implement)
+                    self.master = FairnessRegMaster(I_train, I_test, didi_tr, didi_ts, self.implement, self.loss, self.algo)
                 else:
                     raise ValueError(f'Unknown master type "{self.mtype}"')
 
@@ -314,7 +317,7 @@ class Validation:
 
             # Build the master
             if self.mtype == 'fairness':
-                self.master = FairnessRegMaster(I_train, I_test, didi_tr, didi_ts, self.algo, self.implement)
+                self.master = FairnessRegMaster(I_train, I_test, didi_tr, didi_ts, self.implement, self.loss, self.algo)
             else:
                 raise ValueError(f'Unknown master type "{self.mtype}"')
 

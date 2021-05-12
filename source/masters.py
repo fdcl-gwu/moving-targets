@@ -141,14 +141,15 @@ class BalancedCountsMaster:
 
 class FairnessRegMaster:
 
-    def __init__(self, I_train, I_test, didi_tr, didi_ts, algo, implement):
+    def __init__(self, I_train, I_test, didi_tr, didi_ts, implement, loss, algo):
         super(FairnessRegMaster, self).__init__()
         self.I_test = I_test
         self.I_train = I_train
         self.didi_tr = didi_tr
         self.didi_ts = didi_ts
-        self.algo = algo
         self.implement = implement
+        self.loss = loss
+        self.algo = algo
 
         self.perc_constraint_value = 0.2
         self.constraint_value = self.perc_constraint_value * didi_tr
@@ -228,16 +229,30 @@ class FairnessRegMaster:
             constraint += cp.sum(abs_val)
             list_cons.append(constraint <= self.constraint_value)
 
-            # y_loss = (1.0 / n_points) * cp.sum_squares(y - x)
-            # p_loss = (1.0 / n_points) * cp.sum_squares(p - x)
-            huber_M = 0.5
-            y_loss = (1.0 / n_points) * cp.sum(cp.huber(y - x, huber_M))
-            p_loss = (1.0 / n_points) * cp.sum(cp.huber(p - x, huber_M))
+            if self.loss == 'mse':
+                y_loss = (1.0 / n_points) * cp.sum_squares(y - x)
+                p_loss = (1.0 / n_points) * cp.sum_squares(p - x)
+            elif self.loss == 'mae':
+                y_loss = (1.0 / n_points) * cp.norm(y - x, 1)
+                p_loss = (1.0 / n_points) * cp.norm(p - x, 1)
+            elif self.loss == 'mhl':
+                huber_M = 0.5 # Parameter between 0 and 1
+                y_loss = (1.0 / n_points) * cp.sum(cp.huber(y - x, huber_M))
+                p_loss = (1.0 / n_points) * cp.sum(cp.huber(p - x, huber_M))
+            # elif self.loss == 'logcosh':
+            #     # This loss is QUASICONVEX
+            #     y_loss = (1.0 / n_points) * cp.sum(cp.log((cp.exp(y-x) + cp.exp(x-y))/2))
+            else:
+                raise ValueError(f'Unable to implement "{self.loss}"')
 
             # Affine loss
             if self.algo == 'affine':
-                # aff_loss = (1.0 / n_points) * cp.sum_squares((1-alpha)*y + alpha*p - x)
-                aff_loss = (1.0 / n_points) * cp.sum(cp.huber((1-alpha)*y + alpha*p - x, huber_M))
+                if self.loss == 'mse':
+                    aff_loss = (1.0 / n_points) * cp.sum_squares((1-alpha)*y + alpha*p - x)
+                elif self.loss == 'mae':
+                    aff_loss = (1.0 / n_points) * cp.norm((1-alpha)*y + alpha*p - x, 1)
+                elif self.loss == 'mhl':
+                    aff_loss = (1.0 / n_points) * cp.sum(cp.huber((1-alpha)*y + alpha*p - x, huber_M))
 
             if _feasible and beta >= 0:
                 list_cons.append(p_loss <= beta)
@@ -284,17 +299,23 @@ class FairnessRegMaster:
             mod.add_constraint(constraint <= self.constraint_value, ctname='fairness_cnst')
 
             # Objective Function.
-            # y_loss = (1.0 / n_points) * mod.sum([(y[i] - x[i]) * (y[i] - x[i]) for i in idx_var])
-            # p_loss = (1.0 / n_points) * mod.sum([(p[i] - x[i]) * (p[i] - x[i]) for i in idx_var])
-            y_loss = (1.0 / n_points) * mod.sum([mod.abs(y[i] - x[i]) for i in idx_var])
-            p_loss = (1.0 / n_points) * mod.sum([mod.abs(p[i] - x[i]) for i in idx_var])
+            if self.loss == 'mse':
+                y_loss = (1.0 / n_points) * mod.sum([(y[i] - x[i]) * (y[i] - x[i]) for i in idx_var])
+                p_loss = (1.0 / n_points) * mod.sum([(p[i] - x[i]) * (p[i] - x[i]) for i in idx_var])
+            elif self.loss == 'mae':
+                y_loss = (1.0 / n_points) * mod.sum([mod.abs(y[i] - x[i]) for i in idx_var])
+                p_loss = (1.0 / n_points) * mod.sum([mod.abs(p[i] - x[i]) for i in idx_var])
+            else:
+                raise ValueError(f'Unable to implement "{self.loss}"')
 
             # Affine loss
             if self.algo == 'affine':
-                # aff_loss = (1.0 / n_points) * mod.sum([((1-alpha)*y[i] + alpha*p[i] - x[i]) * 
-                #                                        ((1-alpha)*y[i] + alpha*p[i] - x[i]) for i in idx_var])
-                aff_loss = (1.0 / n_points) * mod.sum([mod.abs((1-alpha)*y[i] + alpha*p[i] - x[i])
-                                                        for i in idx_var])
+                if self.loss == 'mse':
+                    aff_loss = (1.0 / n_points) * mod.sum([((1-alpha)*y[i] + alpha*p[i] - x[i]) *
+                                                           ((1-alpha)*y[i] + alpha*p[i] - x[i]) for i in idx_var])
+                elif self.loss == 'mae':
+                    aff_loss = (1.0 / n_points) * mod.sum([mod.abs((1-alpha)*y[i] + alpha*p[i] - x[i])
+                                                            for i in idx_var])
 
             if _feasible and beta >= 0:
                 # Constrain search on a ball.

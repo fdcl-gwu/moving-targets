@@ -16,11 +16,16 @@ if __name__ == '__main__':
     parser.add_argument('--mtype',
                         choices=['fairness', 'balance'],
                         help='The type of Master problem to be solved (not meaningful for cvx learner)')
-    
+
     parser.add_argument('--implement',
                         choices=['cvxpy', 'cplex'],
                         default='cplex',
                         help='The type of optimization library/ model used')
+
+    parser.add_argument('--loss',
+                        choices=['mse', 'mae', 'mhl'],
+                        default='mse',
+                        help='The loss function to be used (huber loss works only with cvxpy implementation)')
 
     parser.add_argument('--algo',
                         choices=['movtar', 'affine'],
@@ -70,8 +75,9 @@ if __name__ == '__main__':
     # Parse arguments
     args = parser.parse_args()
 
-    instance = Validation(args.dataset, args.nfolds, args.mtype, args.implement, args.algo, args.ltype,
-                          args.iterations, args.alpha_, args.beta_, args.initial_step, args.use_prob)
+    instance = Validation(args.dataset, args.nfolds, args.mtype, args.implement,
+                          args.loss, args.algo, args.ltype, args.iterations,
+                          args.alpha_, args.beta_, args.initial_step, args.use_prob)
     # Validation
     instance.validate()
     instance.collect_results()
