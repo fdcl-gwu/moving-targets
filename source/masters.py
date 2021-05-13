@@ -224,7 +224,7 @@ class FairnessRegMaster:
                     # Linearization of the absolute value.
                     list_cons.append(abs_val[key] >= tmp)
                     list_cons.append(abs_val[key] >= -tmp)
-                    # constraint += tmp
+                    # constraint += cp.abs(tmp)
 
             constraint += cp.sum(abs_val)
             list_cons.append(constraint <= self.constraint_value)
@@ -236,7 +236,7 @@ class FairnessRegMaster:
                 y_loss = (1.0 / n_points) * cp.norm(y - x, 1)
                 p_loss = (1.0 / n_points) * cp.norm(p - x, 1)
             elif self.loss == 'mhl':
-                huber_M = 0.5 # Parameter between 0 and 1
+                huber_M = 0.1 # Parameter between 0 and 1, 0.5
                 y_loss = (1.0 / n_points) * cp.sum(cp.huber(y - x, huber_M))
                 p_loss = (1.0 / n_points) * cp.sum(cp.huber(p - x, huber_M))
             # elif self.loss == 'logcosh':
@@ -266,6 +266,7 @@ class FairnessRegMaster:
                     raise ValueError(f'Unknown algorithm "{self.algo}"')
 
             prob = cp.Problem(obj, list_cons)
+            # OSQP (default), CPLEX (IBM module), ECOS (last option)
             prob.solve(solver=cp.CPLEX)  # Returns the optimal value.
 
             # Check solution.
