@@ -40,7 +40,7 @@ def analyze_results():
     info = dict.fromkeys(args.name)
 
     for filename in args.name:
-        with open(path+filename+'.log', mode='r') as f:
+        with open(path+filename, mode='r') as f:
             lines = f.readlines()
 
         inf = dict()

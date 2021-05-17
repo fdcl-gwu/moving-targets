@@ -1,0 +1,3137 @@
+dataset: blackfriday
+nfolds: 5
+mtype: fairness
+algo: affine
+ltype: gb
+iterations: 30
+alpha: 0.5
+beta: 0.1
+initial_step: pretraining
+use_prob: False
+test_size: 0.2
+### Processing fold 0
+>>> Starting the MACS process
+DIDI perc. index in the training set: 1.000
+DIDI perc. index in the test set: 1.000
+Predictions for the untrained model are not available
+--- Starting pretraining
+Pretraining time: 0.859
+DIDI perc. index in the training set, for the pretrained model: 0.954
+DIDI perc. index in the test set, for the pretrained model: 0.898
+MSE on the train set, for the pretrained model: 0.015
+R2 on the train set, for the pretrained model: 0.654
+MSE on the test set, for the pretrained model: 0.016
+R2 on the test set, for the pretrained model: 0.636
+--- Pretraining done
+Iteration: 0
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 59.570
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.887
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.834
+DIDI perc. index in the training set, for the model: 0.569
+DIDI perc. index in the test set, for the model: 0.420
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.641
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.622
+--- Training done
+=== Iteration 0 is over
+Iteration: 1
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.189
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.892
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.834
+DIDI perc. index in the training set, for the model: 0.492
+DIDI perc. index in the test set, for the model: 0.322
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.632
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.612
+--- Training done
+=== Iteration 1 is over
+Iteration: 2
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.821
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.887
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.837
+DIDI perc. index in the training set, for the model: 0.484
+DIDI perc. index in the test set, for the model: 0.311
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.630
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.611
+--- Training done
+=== Iteration 2 is over
+Iteration: 3
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.705
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.888
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.835
+DIDI perc. index in the training set, for the model: 0.490
+DIDI perc. index in the test set, for the model: 0.328
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.628
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.609
+--- Training done
+=== Iteration 3 is over
+Iteration: 4
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.825
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.887
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.837
+DIDI perc. index in the training set, for the model: 0.480
+DIDI perc. index in the test set, for the model: 0.312
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.628
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.608
+--- Training done
+=== Iteration 4 is over
+Iteration: 5
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.481
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.887
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.838
+DIDI perc. index in the training set, for the model: 0.485
+DIDI perc. index in the test set, for the model: 0.319
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.624
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.604
+--- Training done
+=== Iteration 5 is over
+Iteration: 6
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.141
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.885
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.835
+DIDI perc. index in the training set, for the model: 0.463
+DIDI perc. index in the test set, for the model: 0.291
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.626
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.607
+--- Training done
+=== Iteration 6 is over
+Iteration: 7
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.576
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.888
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.835
+DIDI perc. index in the training set, for the model: 0.459
+DIDI perc. index in the test set, for the model: 0.290
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.625
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.605
+--- Training done
+=== Iteration 7 is over
+Iteration: 8
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.085
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.887
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.836
+DIDI perc. index in the training set, for the model: 0.492
+DIDI perc. index in the test set, for the model: 0.329
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.628
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.608
+--- Training done
+=== Iteration 8 is over
+Iteration: 9
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.339
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.890
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.837
+DIDI perc. index in the training set, for the model: 0.479
+DIDI perc. index in the test set, for the model: 0.308
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.629
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.609
+--- Training done
+=== Iteration 9 is over
+Iteration: 10
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.797
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.890
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.835
+DIDI perc. index in the training set, for the model: 0.486
+DIDI perc. index in the test set, for the model: 0.315
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.625
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.605
+--- Training done
+=== Iteration 10 is over
+Iteration: 11
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.218
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.887
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.832
+DIDI perc. index in the training set, for the model: 0.484
+DIDI perc. index in the test set, for the model: 0.319
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.627
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.607
+--- Training done
+=== Iteration 11 is over
+Iteration: 12
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.044
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.887
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.834
+DIDI perc. index in the training set, for the model: 0.485
+DIDI perc. index in the test set, for the model: 0.314
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.628
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.608
+--- Training done
+=== Iteration 12 is over
+Iteration: 13
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.662
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.889
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.834
+DIDI perc. index in the training set, for the model: 0.472
+DIDI perc. index in the test set, for the model: 0.294
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.626
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.606
+--- Training done
+=== Iteration 13 is over
+Iteration: 14
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.137
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.887
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.834
+DIDI perc. index in the training set, for the model: 0.467
+DIDI perc. index in the test set, for the model: 0.300
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.623
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.604
+--- Training done
+=== Iteration 14 is over
+Iteration: 15
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.638
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.887
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.834
+DIDI perc. index in the training set, for the model: 0.473
+DIDI perc. index in the test set, for the model: 0.295
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.624
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.604
+--- Training done
+=== Iteration 15 is over
+Iteration: 16
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.128
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.889
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.834
+DIDI perc. index in the training set, for the model: 0.478
+DIDI perc. index in the test set, for the model: 0.304
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.624
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.605
+--- Training done
+=== Iteration 16 is over
+Iteration: 17
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.094
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.887
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.834
+DIDI perc. index in the training set, for the model: 0.479
+DIDI perc. index in the test set, for the model: 0.300
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.627
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.606
+--- Training done
+=== Iteration 17 is over
+Iteration: 18
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.200
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.889
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.839
+DIDI perc. index in the training set, for the model: 0.494
+DIDI perc. index in the test set, for the model: 0.321
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.628
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.608
+--- Training done
+=== Iteration 18 is over
+Iteration: 19
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.602
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.888
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.834
+DIDI perc. index in the training set, for the model: 0.464
+DIDI perc. index in the test set, for the model: 0.278
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.625
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.605
+--- Training done
+=== Iteration 19 is over
+Iteration: 20
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.677
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.888
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.832
+DIDI perc. index in the training set, for the model: 0.463
+DIDI perc. index in the test set, for the model: 0.273
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.626
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.606
+--- Training done
+=== Iteration 20 is over
+Iteration: 21
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.424
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.889
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.832
+DIDI perc. index in the training set, for the model: 0.511
+DIDI perc. index in the test set, for the model: 0.338
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.629
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.608
+--- Training done
+=== Iteration 21 is over
+Iteration: 22
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.095
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.887
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.832
+DIDI perc. index in the training set, for the model: 0.465
+DIDI perc. index in the test set, for the model: 0.285
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.627
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.607
+--- Training done
+=== Iteration 22 is over
+Iteration: 23
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.683
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.887
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.837
+DIDI perc. index in the training set, for the model: 0.470
+DIDI perc. index in the test set, for the model: 0.297
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.629
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.609
+--- Training done
+=== Iteration 23 is over
+Iteration: 24
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.020
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.891
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.832
+DIDI perc. index in the training set, for the model: 0.497
+DIDI perc. index in the test set, for the model: 0.332
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.627
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.607
+--- Training done
+=== Iteration 24 is over
+Iteration: 25
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.365
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.889
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.832
+DIDI perc. index in the training set, for the model: 0.498
+DIDI perc. index in the test set, for the model: 0.326
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.626
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.606
+--- Training done
+=== Iteration 25 is over
+Iteration: 26
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.933
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.885
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.833
+DIDI perc. index in the training set, for the model: 0.487
+DIDI perc. index in the test set, for the model: 0.313
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.626
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.606
+--- Training done
+=== Iteration 26 is over
+Iteration: 27
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.502
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.887
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.833
+DIDI perc. index in the training set, for the model: 0.478
+DIDI perc. index in the test set, for the model: 0.296
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.628
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.608
+--- Training done
+=== Iteration 27 is over
+Iteration: 28
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.314
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.889
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.835
+DIDI perc. index in the training set, for the model: 0.489
+DIDI perc. index in the test set, for the model: 0.313
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.628
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.607
+--- Training done
+=== Iteration 28 is over
+Iteration: 29
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.042
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.887
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.834
+DIDI perc. index in the training set, for the model: 0.493
+DIDI perc. index in the test set, for the model: 0.328
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.627
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.608
+--- Training done
+=== Iteration 29 is over
+>>> The MACS process is over
+### Processing fold 1
+>>> Starting the MACS process
+DIDI perc. index in the training set: 1.000
+DIDI perc. index in the test set: 1.000
+Predictions for the untrained model are not available
+--- Starting pretraining
+Pretraining time: 0.834
+DIDI perc. index in the training set, for the pretrained model: 0.955
+DIDI perc. index in the test set, for the pretrained model: 0.950
+MSE on the train set, for the pretrained model: 0.015
+R2 on the train set, for the pretrained model: 0.652
+MSE on the test set, for the pretrained model: 0.016
+R2 on the test set, for the pretrained model: 0.647
+--- Pretraining done
+Iteration: 0
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.451
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.890
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.834
+DIDI perc. index in the training set, for the model: 0.558
+DIDI perc. index in the test set, for the model: 0.674
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.637
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.630
+--- Training done
+=== Iteration 0 is over
+Iteration: 1
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.678
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.894
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.832
+DIDI perc. index in the training set, for the model: 0.545
+DIDI perc. index in the test set, for the model: 0.651
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.629
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.621
+--- Training done
+=== Iteration 1 is over
+Iteration: 2
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.378
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.891
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.834
+DIDI perc. index in the training set, for the model: 0.494
+DIDI perc. index in the test set, for the model: 0.622
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.625
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.618
+--- Training done
+=== Iteration 2 is over
+Iteration: 3
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.269
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.892
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.834
+DIDI perc. index in the training set, for the model: 0.506
+DIDI perc. index in the test set, for the model: 0.635
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.624
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.616
+--- Training done
+=== Iteration 3 is over
+Iteration: 4
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.296
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.891
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.834
+DIDI perc. index in the training set, for the model: 0.479
+DIDI perc. index in the test set, for the model: 0.617
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.624
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.616
+--- Training done
+=== Iteration 4 is over
+Iteration: 5
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.009
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.892
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.833
+DIDI perc. index in the training set, for the model: 0.497
+DIDI perc. index in the test set, for the model: 0.632
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.625
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.616
+--- Training done
+=== Iteration 5 is over
+Iteration: 6
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.375
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.892
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.839
+DIDI perc. index in the training set, for the model: 0.492
+DIDI perc. index in the test set, for the model: 0.624
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.622
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.613
+--- Training done
+=== Iteration 6 is over
+Iteration: 7
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.301
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.890
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.837
+DIDI perc. index in the training set, for the model: 0.496
+DIDI perc. index in the test set, for the model: 0.625
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.623
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.614
+--- Training done
+=== Iteration 7 is over
+Iteration: 8
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.839
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.888
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.838
+DIDI perc. index in the training set, for the model: 0.505
+DIDI perc. index in the test set, for the model: 0.630
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.626
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.618
+--- Training done
+=== Iteration 8 is over
+Iteration: 9
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.586
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.889
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.837
+DIDI perc. index in the training set, for the model: 0.496
+DIDI perc. index in the test set, for the model: 0.626
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.623
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.614
+--- Training done
+=== Iteration 9 is over
+Iteration: 10
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.756
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.888
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.838
+DIDI perc. index in the training set, for the model: 0.493
+DIDI perc. index in the test set, for the model: 0.623
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.627
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.619
+--- Training done
+=== Iteration 10 is over
+Iteration: 11
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.492
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.892
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.836
+DIDI perc. index in the training set, for the model: 0.490
+DIDI perc. index in the test set, for the model: 0.621
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.627
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.619
+--- Training done
+=== Iteration 11 is over
+Iteration: 12
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.014
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.890
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.836
+DIDI perc. index in the training set, for the model: 0.501
+DIDI perc. index in the test set, for the model: 0.629
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.625
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.616
+--- Training done
+=== Iteration 12 is over
+Iteration: 13
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.185
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.888
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.835
+DIDI perc. index in the training set, for the model: 0.481
+DIDI perc. index in the test set, for the model: 0.618
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.622
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.613
+--- Training done
+=== Iteration 13 is over
+Iteration: 14
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.245
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.890
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.833
+DIDI perc. index in the training set, for the model: 0.478
+DIDI perc. index in the test set, for the model: 0.613
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.624
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.616
+--- Training done
+=== Iteration 14 is over
+Iteration: 15
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.897
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.890
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.833
+DIDI perc. index in the training set, for the model: 0.500
+DIDI perc. index in the test set, for the model: 0.623
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.625
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.617
+--- Training done
+=== Iteration 15 is over
+Iteration: 16
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.662
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.892
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.833
+DIDI perc. index in the training set, for the model: 0.518
+DIDI perc. index in the test set, for the model: 0.638
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.626
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.617
+--- Training done
+=== Iteration 16 is over
+Iteration: 17
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.633
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.891
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.834
+DIDI perc. index in the training set, for the model: 0.489
+DIDI perc. index in the test set, for the model: 0.616
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.625
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.616
+--- Training done
+=== Iteration 17 is over
+Iteration: 18
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.049
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.892
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.834
+DIDI perc. index in the training set, for the model: 0.503
+DIDI perc. index in the test set, for the model: 0.630
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.623
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.615
+--- Training done
+=== Iteration 18 is over
+Iteration: 19
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.274
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.891
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.835
+DIDI perc. index in the training set, for the model: 0.523
+DIDI perc. index in the test set, for the model: 0.639
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.625
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.617
+--- Training done
+=== Iteration 19 is over
+Iteration: 20
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.681
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.891
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.832
+DIDI perc. index in the training set, for the model: 0.482
+DIDI perc. index in the test set, for the model: 0.615
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.624
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.616
+--- Training done
+=== Iteration 20 is over
+Iteration: 21
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.144
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.891
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.835
+DIDI perc. index in the training set, for the model: 0.523
+DIDI perc. index in the test set, for the model: 0.641
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.623
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.614
+--- Training done
+=== Iteration 21 is over
+Iteration: 22
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.928
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.891
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.835
+DIDI perc. index in the training set, for the model: 0.501
+DIDI perc. index in the test set, for the model: 0.623
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.624
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.616
+--- Training done
+=== Iteration 22 is over
+Iteration: 23
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.523
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.892
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.836
+DIDI perc. index in the training set, for the model: 0.509
+DIDI perc. index in the test set, for the model: 0.635
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.624
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.615
+--- Training done
+=== Iteration 23 is over
+Iteration: 24
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.720
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.891
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.835
+DIDI perc. index in the training set, for the model: 0.507
+DIDI perc. index in the test set, for the model: 0.623
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.625
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.616
+--- Training done
+=== Iteration 24 is over
+Iteration: 25
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.554
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.891
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.834
+DIDI perc. index in the training set, for the model: 0.495
+DIDI perc. index in the test set, for the model: 0.623
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.625
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.617
+--- Training done
+=== Iteration 25 is over
+Iteration: 26
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.339
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.891
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.831
+DIDI perc. index in the training set, for the model: 0.496
+DIDI perc. index in the test set, for the model: 0.624
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.626
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.618
+--- Training done
+=== Iteration 26 is over
+Iteration: 27
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.497
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.889
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.835
+DIDI perc. index in the training set, for the model: 0.503
+DIDI perc. index in the test set, for the model: 0.622
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.624
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.616
+--- Training done
+=== Iteration 27 is over
+Iteration: 28
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.655
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.891
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.833
+DIDI perc. index in the training set, for the model: 0.476
+DIDI perc. index in the test set, for the model: 0.607
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.622
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.613
+--- Training done
+=== Iteration 28 is over
+Iteration: 29
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.604
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.891
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.834
+DIDI perc. index in the training set, for the model: 0.499
+DIDI perc. index in the test set, for the model: 0.624
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.625
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.618
+--- Training done
+=== Iteration 29 is over
+>>> The MACS process is over
+### Processing fold 2
+>>> Starting the MACS process
+DIDI perc. index in the training set: 1.000
+DIDI perc. index in the test set: 1.000
+Predictions for the untrained model are not available
+--- Starting pretraining
+Pretraining time: 0.845
+DIDI perc. index in the training set, for the pretrained model: 0.945
+DIDI perc. index in the test set, for the pretrained model: 0.930
+MSE on the train set, for the pretrained model: 0.015
+R2 on the train set, for the pretrained model: 0.652
+MSE on the test set, for the pretrained model: 0.016
+R2 on the test set, for the pretrained model: 0.643
+--- Pretraining done
+Iteration: 0
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.099
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.887
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.837
+DIDI perc. index in the training set, for the model: 0.520
+DIDI perc. index in the test set, for the model: 0.281
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.635
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.628
+--- Training done
+=== Iteration 0 is over
+Iteration: 1
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.653
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.889
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.837
+DIDI perc. index in the training set, for the model: 0.500
+DIDI perc. index in the test set, for the model: 0.249
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.629
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.622
+--- Training done
+=== Iteration 1 is over
+Iteration: 2
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.178
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.888
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.836
+DIDI perc. index in the training set, for the model: 0.465
+DIDI perc. index in the test set, for the model: 0.195
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.624
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.617
+--- Training done
+=== Iteration 2 is over
+Iteration: 3
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.767
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.887
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.837
+DIDI perc. index in the training set, for the model: 0.462
+DIDI perc. index in the test set, for the model: 0.189
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.623
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.616
+--- Training done
+=== Iteration 3 is over
+Iteration: 4
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.770
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.887
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.834
+DIDI perc. index in the training set, for the model: 0.498
+DIDI perc. index in the test set, for the model: 0.233
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.625
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.618
+--- Training done
+=== Iteration 4 is over
+Iteration: 5
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.028
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.887
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.833
+DIDI perc. index in the training set, for the model: 0.462
+DIDI perc. index in the test set, for the model: 0.185
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.624
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.617
+--- Training done
+=== Iteration 5 is over
+Iteration: 6
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.766
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.886
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.836
+DIDI perc. index in the training set, for the model: 0.452
+DIDI perc. index in the test set, for the model: 0.168
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.623
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.616
+--- Training done
+=== Iteration 6 is over
+Iteration: 7
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.162
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.888
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.834
+DIDI perc. index in the training set, for the model: 0.463
+DIDI perc. index in the test set, for the model: 0.185
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.622
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.616
+--- Training done
+=== Iteration 7 is over
+Iteration: 8
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.313
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.886
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.834
+DIDI perc. index in the training set, for the model: 0.469
+DIDI perc. index in the test set, for the model: 0.202
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.623
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.617
+--- Training done
+=== Iteration 8 is over
+Iteration: 9
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.093
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.887
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.832
+DIDI perc. index in the training set, for the model: 0.477
+DIDI perc. index in the test set, for the model: 0.205
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.625
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.619
+--- Training done
+=== Iteration 9 is over
+Iteration: 10
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.375
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.887
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.836
+DIDI perc. index in the training set, for the model: 0.479
+DIDI perc. index in the test set, for the model: 0.207
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.624
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.617
+--- Training done
+=== Iteration 10 is over
+Iteration: 11
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.555
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.887
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.833
+DIDI perc. index in the training set, for the model: 0.490
+DIDI perc. index in the test set, for the model: 0.218
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.628
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.621
+--- Training done
+=== Iteration 11 is over
+Iteration: 12
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.510
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.888
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.834
+DIDI perc. index in the training set, for the model: 0.486
+DIDI perc. index in the test set, for the model: 0.215
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.627
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.621
+--- Training done
+=== Iteration 12 is over
+Iteration: 13
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.452
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.887
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.832
+DIDI perc. index in the training set, for the model: 0.467
+DIDI perc. index in the test set, for the model: 0.189
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.625
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.618
+--- Training done
+=== Iteration 13 is over
+Iteration: 14
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.863
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.885
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.835
+DIDI perc. index in the training set, for the model: 0.478
+DIDI perc. index in the test set, for the model: 0.208
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.623
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.617
+--- Training done
+=== Iteration 14 is over
+Iteration: 15
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.664
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.887
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.832
+DIDI perc. index in the training set, for the model: 0.457
+DIDI perc. index in the test set, for the model: 0.172
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.621
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.615
+--- Training done
+=== Iteration 15 is over
+Iteration: 16
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.484
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.886
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.833
+DIDI perc. index in the training set, for the model: 0.475
+DIDI perc. index in the test set, for the model: 0.206
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.623
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.616
+--- Training done
+=== Iteration 16 is over
+Iteration: 17
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.065
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.884
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.835
+DIDI perc. index in the training set, for the model: 0.458
+DIDI perc. index in the test set, for the model: 0.186
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.621
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.614
+--- Training done
+=== Iteration 17 is over
+Iteration: 18
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.382
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.885
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.836
+DIDI perc. index in the training set, for the model: 0.503
+DIDI perc. index in the test set, for the model: 0.251
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.625
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.619
+--- Training done
+=== Iteration 18 is over
+Iteration: 19
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.906
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.887
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.835
+DIDI perc. index in the training set, for the model: 0.467
+DIDI perc. index in the test set, for the model: 0.197
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.618
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.610
+--- Training done
+=== Iteration 19 is over
+Iteration: 20
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.726
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.887
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.836
+DIDI perc. index in the training set, for the model: 0.475
+DIDI perc. index in the test set, for the model: 0.205
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.623
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.616
+--- Training done
+=== Iteration 20 is over
+Iteration: 21
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.535
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.887
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.839
+DIDI perc. index in the training set, for the model: 0.477
+DIDI perc. index in the test set, for the model: 0.217
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.623
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.616
+--- Training done
+=== Iteration 21 is over
+Iteration: 22
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.288
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.887
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.835
+DIDI perc. index in the training set, for the model: 0.476
+DIDI perc. index in the test set, for the model: 0.203
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.625
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.619
+--- Training done
+=== Iteration 22 is over
+Iteration: 23
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.604
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.887
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.836
+DIDI perc. index in the training set, for the model: 0.463
+DIDI perc. index in the test set, for the model: 0.186
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.623
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.617
+--- Training done
+=== Iteration 23 is over
+Iteration: 24
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.026
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.887
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.834
+DIDI perc. index in the training set, for the model: 0.478
+DIDI perc. index in the test set, for the model: 0.207
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.622
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.616
+--- Training done
+=== Iteration 24 is over
+Iteration: 25
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.304
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.886
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.834
+DIDI perc. index in the training set, for the model: 0.481
+DIDI perc. index in the test set, for the model: 0.214
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.623
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.616
+--- Training done
+=== Iteration 25 is over
+Iteration: 26
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.998
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.886
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.834
+DIDI perc. index in the training set, for the model: 0.494
+DIDI perc. index in the test set, for the model: 0.225
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.627
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.621
+--- Training done
+=== Iteration 26 is over
+Iteration: 27
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.788
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.886
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.836
+DIDI perc. index in the training set, for the model: 0.494
+DIDI perc. index in the test set, for the model: 0.223
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.628
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.621
+--- Training done
+=== Iteration 27 is over
+Iteration: 28
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.979
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.886
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.836
+DIDI perc. index in the training set, for the model: 0.473
+DIDI perc. index in the test set, for the model: 0.191
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.624
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.617
+--- Training done
+=== Iteration 28 is over
+Iteration: 29
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.714
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.885
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.831
+DIDI perc. index in the training set, for the model: 0.450
+DIDI perc. index in the test set, for the model: 0.169
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.621
+MSE on the test set, for the model: 0.017
+R2 on the test set, for the model: 0.614
+--- Training done
+=== Iteration 29 is over
+>>> The MACS process is over
+### Processing fold 3
+>>> Starting the MACS process
+DIDI perc. index in the training set: 1.000
+DIDI perc. index in the test set: 1.000
+Predictions for the untrained model are not available
+--- Starting pretraining
+Pretraining time: 0.833
+DIDI perc. index in the training set, for the pretrained model: 0.974
+DIDI perc. index in the test set, for the pretrained model: 0.822
+MSE on the train set, for the pretrained model: 0.015
+R2 on the train set, for the pretrained model: 0.649
+MSE on the test set, for the pretrained model: 0.015
+R2 on the test set, for the pretrained model: 0.659
+--- Pretraining done
+Iteration: 0
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.708
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.888
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.832
+DIDI perc. index in the training set, for the model: 0.580
+DIDI perc. index in the test set, for the model: 0.524
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.631
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.643
+--- Training done
+=== Iteration 0 is over
+Iteration: 1
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.233
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.892
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.833
+DIDI perc. index in the training set, for the model: 0.524
+DIDI perc. index in the test set, for the model: 0.490
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.627
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.640
+--- Training done
+=== Iteration 1 is over
+Iteration: 2
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.459
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.892
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.835
+DIDI perc. index in the training set, for the model: 0.504
+DIDI perc. index in the test set, for the model: 0.475
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.621
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.634
+--- Training done
+=== Iteration 2 is over
+Iteration: 3
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.867
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.890
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.835
+DIDI perc. index in the training set, for the model: 0.506
+DIDI perc. index in the test set, for the model: 0.476
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.622
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.635
+--- Training done
+=== Iteration 3 is over
+Iteration: 4
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.875
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.890
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.836
+DIDI perc. index in the training set, for the model: 0.495
+DIDI perc. index in the test set, for the model: 0.470
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.621
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.634
+--- Training done
+=== Iteration 4 is over
+Iteration: 5
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.662
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.889
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.835
+DIDI perc. index in the training set, for the model: 0.487
+DIDI perc. index in the test set, for the model: 0.462
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.622
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.634
+--- Training done
+=== Iteration 5 is over
+Iteration: 6
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.035
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.890
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.836
+DIDI perc. index in the training set, for the model: 0.499
+DIDI perc. index in the test set, for the model: 0.477
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.623
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.635
+--- Training done
+=== Iteration 6 is over
+Iteration: 7
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.013
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.890
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.835
+DIDI perc. index in the training set, for the model: 0.461
+DIDI perc. index in the test set, for the model: 0.447
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.619
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.632
+--- Training done
+=== Iteration 7 is over
+Iteration: 8
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.916
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.890
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.835
+DIDI perc. index in the training set, for the model: 0.475
+DIDI perc. index in the test set, for the model: 0.454
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.621
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.634
+--- Training done
+=== Iteration 8 is over
+Iteration: 9
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.165
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.889
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.837
+DIDI perc. index in the training set, for the model: 0.479
+DIDI perc. index in the test set, for the model: 0.452
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.618
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.632
+--- Training done
+=== Iteration 9 is over
+Iteration: 10
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.453
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.888
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.835
+DIDI perc. index in the training set, for the model: 0.486
+DIDI perc. index in the test set, for the model: 0.463
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.619
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.632
+--- Training done
+=== Iteration 10 is over
+Iteration: 11
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.207
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.888
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.836
+DIDI perc. index in the training set, for the model: 0.484
+DIDI perc. index in the test set, for the model: 0.457
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.621
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.635
+--- Training done
+=== Iteration 11 is over
+Iteration: 12
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.854
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.888
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.837
+DIDI perc. index in the training set, for the model: 0.485
+DIDI perc. index in the test set, for the model: 0.459
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.619
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.632
+--- Training done
+=== Iteration 12 is over
+Iteration: 13
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.711
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.888
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.835
+DIDI perc. index in the training set, for the model: 0.479
+DIDI perc. index in the test set, for the model: 0.454
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.620
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.633
+--- Training done
+=== Iteration 13 is over
+Iteration: 14
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.787
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.889
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.834
+DIDI perc. index in the training set, for the model: 0.494
+DIDI perc. index in the test set, for the model: 0.465
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.618
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.632
+--- Training done
+=== Iteration 14 is over
+Iteration: 15
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.936
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.888
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.842
+DIDI perc. index in the training set, for the model: 0.498
+DIDI perc. index in the test set, for the model: 0.474
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.620
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.634
+--- Training done
+=== Iteration 15 is over
+Iteration: 16
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.440
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.889
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.834
+DIDI perc. index in the training set, for the model: 0.498
+DIDI perc. index in the test set, for the model: 0.478
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.624
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.637
+--- Training done
+=== Iteration 16 is over
+Iteration: 17
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.058
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.890
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.836
+DIDI perc. index in the training set, for the model: 0.509
+DIDI perc. index in the test set, for the model: 0.486
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.623
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.637
+--- Training done
+=== Iteration 17 is over
+Iteration: 18
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.621
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.889
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.838
+DIDI perc. index in the training set, for the model: 0.485
+DIDI perc. index in the test set, for the model: 0.463
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.622
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.636
+--- Training done
+=== Iteration 18 is over
+Iteration: 19
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.005
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.889
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.835
+DIDI perc. index in the training set, for the model: 0.496
+DIDI perc. index in the test set, for the model: 0.476
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.623
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.636
+--- Training done
+=== Iteration 19 is over
+Iteration: 20
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.960
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.890
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.838
+DIDI perc. index in the training set, for the model: 0.490
+DIDI perc. index in the test set, for the model: 0.468
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.620
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.634
+--- Training done
+=== Iteration 20 is over
+Iteration: 21
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.398
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.889
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.838
+DIDI perc. index in the training set, for the model: 0.488
+DIDI perc. index in the test set, for the model: 0.471
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.620
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.633
+--- Training done
+=== Iteration 21 is over
+Iteration: 22
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.564
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.888
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.836
+DIDI perc. index in the training set, for the model: 0.476
+DIDI perc. index in the test set, for the model: 0.450
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.618
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.632
+--- Training done
+=== Iteration 22 is over
+Iteration: 23
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.921
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.889
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.837
+DIDI perc. index in the training set, for the model: 0.476
+DIDI perc. index in the test set, for the model: 0.454
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.621
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.634
+--- Training done
+=== Iteration 23 is over
+Iteration: 24
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.791
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.889
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.837
+DIDI perc. index in the training set, for the model: 0.504
+DIDI perc. index in the test set, for the model: 0.480
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.621
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.634
+--- Training done
+=== Iteration 24 is over
+Iteration: 25
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.989
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.889
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.836
+DIDI perc. index in the training set, for the model: 0.487
+DIDI perc. index in the test set, for the model: 0.460
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.617
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.631
+--- Training done
+=== Iteration 25 is over
+Iteration: 26
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.078
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.888
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.833
+DIDI perc. index in the training set, for the model: 0.495
+DIDI perc. index in the test set, for the model: 0.466
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.619
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.632
+--- Training done
+=== Iteration 26 is over
+Iteration: 27
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.394
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.889
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.838
+DIDI perc. index in the training set, for the model: 0.479
+DIDI perc. index in the test set, for the model: 0.452
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.623
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.635
+--- Training done
+=== Iteration 27 is over
+Iteration: 28
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.266
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.890
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.837
+DIDI perc. index in the training set, for the model: 0.489
+DIDI perc. index in the test set, for the model: 0.467
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.626
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.638
+--- Training done
+=== Iteration 28 is over
+Iteration: 29
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.711
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.891
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.837
+DIDI perc. index in the training set, for the model: 0.481
+DIDI perc. index in the test set, for the model: 0.456
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.624
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.636
+--- Training done
+=== Iteration 29 is over
+>>> The MACS process is over
+### Processing fold 4
+>>> Starting the MACS process
+DIDI perc. index in the training set: 1.000
+DIDI perc. index in the test set: 1.000
+Predictions for the untrained model are not available
+--- Starting pretraining
+Pretraining time: 0.837
+DIDI perc. index in the training set, for the pretrained model: 0.921
+DIDI perc. index in the test set, for the pretrained model: 1.146
+MSE on the train set, for the pretrained model: 0.015
+R2 on the train set, for the pretrained model: 0.650
+MSE on the test set, for the pretrained model: 0.015
+R2 on the test set, for the pretrained model: 0.660
+--- Pretraining done
+Iteration: 0
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.506
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.887
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.836
+DIDI perc. index in the training set, for the model: 0.522
+DIDI perc. index in the test set, for the model: 0.727
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.633
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.644
+--- Training done
+=== Iteration 0 is over
+Iteration: 1
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.405
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.891
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.837
+DIDI perc. index in the training set, for the model: 0.488
+DIDI perc. index in the test set, for the model: 0.687
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.625
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.636
+--- Training done
+=== Iteration 1 is over
+Iteration: 2
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.628
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.889
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.837
+DIDI perc. index in the training set, for the model: 0.449
+DIDI perc. index in the test set, for the model: 0.645
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.621
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.633
+--- Training done
+=== Iteration 2 is over
+Iteration: 3
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.041
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.888
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.835
+DIDI perc. index in the training set, for the model: 0.461
+DIDI perc. index in the test set, for the model: 0.673
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.620
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.632
+--- Training done
+=== Iteration 3 is over
+Iteration: 4
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.117
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.887
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.836
+DIDI perc. index in the training set, for the model: 0.453
+DIDI perc. index in the test set, for the model: 0.668
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.619
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.631
+--- Training done
+=== Iteration 4 is over
+Iteration: 5
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.851
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.887
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.836
+DIDI perc. index in the training set, for the model: 0.467
+DIDI perc. index in the test set, for the model: 0.676
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.620
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.631
+--- Training done
+=== Iteration 5 is over
+Iteration: 6
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.029
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.887
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.837
+DIDI perc. index in the training set, for the model: 0.464
+DIDI perc. index in the test set, for the model: 0.671
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.622
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.634
+--- Training done
+=== Iteration 6 is over
+Iteration: 7
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.483
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.888
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.838
+DIDI perc. index in the training set, for the model: 0.447
+DIDI perc. index in the test set, for the model: 0.664
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.617
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.629
+--- Training done
+=== Iteration 7 is over
+Iteration: 8
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.181
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.887
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.894
+DIDI perc. index in the training set, for the model: 0.463
+DIDI perc. index in the test set, for the model: 0.680
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.617
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.629
+--- Training done
+=== Iteration 8 is over
+Iteration: 9
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.523
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.885
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.836
+DIDI perc. index in the training set, for the model: 0.450
+DIDI perc. index in the test set, for the model: 0.652
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.620
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.631
+--- Training done
+=== Iteration 9 is over
+Iteration: 10
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.234
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.888
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.838
+DIDI perc. index in the training set, for the model: 0.450
+DIDI perc. index in the test set, for the model: 0.655
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.621
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.633
+--- Training done
+=== Iteration 10 is over
+Iteration: 11
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.765
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.887
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.836
+DIDI perc. index in the training set, for the model: 0.462
+DIDI perc. index in the test set, for the model: 0.666
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.620
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.631
+--- Training done
+=== Iteration 11 is over
+Iteration: 12
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.191
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.888
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.836
+DIDI perc. index in the training set, for the model: 0.450
+DIDI perc. index in the test set, for the model: 0.656
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.622
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.633
+--- Training done
+=== Iteration 12 is over
+Iteration: 13
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.191
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.888
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.837
+DIDI perc. index in the training set, for the model: 0.453
+DIDI perc. index in the test set, for the model: 0.658
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.620
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.631
+--- Training done
+=== Iteration 13 is over
+Iteration: 14
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 61.238
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.888
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.833
+DIDI perc. index in the training set, for the model: 0.462
+DIDI perc. index in the test set, for the model: 0.665
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.618
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.629
+--- Training done
+=== Iteration 14 is over
+Iteration: 15
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.143
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.888
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.833
+DIDI perc. index in the training set, for the model: 0.448
+DIDI perc. index in the test set, for the model: 0.651
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.619
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.631
+--- Training done
+=== Iteration 15 is over
+Iteration: 16
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.654
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.888
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.835
+DIDI perc. index in the training set, for the model: 0.459
+DIDI perc. index in the test set, for the model: 0.659
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.621
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.632
+--- Training done
+=== Iteration 16 is over
+Iteration: 17
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.474
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.888
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.830
+DIDI perc. index in the training set, for the model: 0.473
+DIDI perc. index in the test set, for the model: 0.674
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.620
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.631
+--- Training done
+=== Iteration 17 is over
+Iteration: 18
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.478
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.886
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.838
+DIDI perc. index in the training set, for the model: 0.457
+DIDI perc. index in the test set, for the model: 0.668
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.621
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.632
+--- Training done
+=== Iteration 18 is over
+Iteration: 19
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.365
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.888
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.834
+DIDI perc. index in the training set, for the model: 0.467
+DIDI perc. index in the test set, for the model: 0.680
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.621
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.632
+--- Training done
+=== Iteration 19 is over
+Iteration: 20
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.749
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.887
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.836
+DIDI perc. index in the training set, for the model: 0.474
+DIDI perc. index in the test set, for the model: 0.687
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.620
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.631
+--- Training done
+=== Iteration 20 is over
+Iteration: 21
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.207
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.888
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.833
+DIDI perc. index in the training set, for the model: 0.461
+DIDI perc. index in the test set, for the model: 0.666
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.621
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.633
+--- Training done
+=== Iteration 21 is over
+Iteration: 22
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.424
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.888
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.834
+DIDI perc. index in the training set, for the model: 0.457
+DIDI perc. index in the test set, for the model: 0.667
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.622
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.634
+--- Training done
+=== Iteration 22 is over
+Iteration: 23
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.245
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.888
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.832
+DIDI perc. index in the training set, for the model: 0.456
+DIDI perc. index in the test set, for the model: 0.661
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.619
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.631
+--- Training done
+=== Iteration 23 is over
+Iteration: 24
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.780
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.887
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.834
+DIDI perc. index in the training set, for the model: 0.468
+DIDI perc. index in the test set, for the model: 0.679
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.620
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.632
+--- Training done
+=== Iteration 24 is over
+Iteration: 25
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.166
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.887
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.834
+DIDI perc. index in the training set, for the model: 0.439
+DIDI perc. index in the test set, for the model: 0.641
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.618
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.629
+--- Training done
+=== Iteration 25 is over
+Iteration: 26
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.779
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.888
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.832
+DIDI perc. index in the training set, for the model: 0.453
+DIDI perc. index in the test set, for the model: 0.662
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.620
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.632
+--- Training done
+=== Iteration 26 is over
+Iteration: 27
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.533
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.888
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.831
+DIDI perc. index in the training set, for the model: 0.472
+DIDI perc. index in the test set, for the model: 0.682
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.620
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.631
+--- Training done
+=== Iteration 27 is over
+Iteration: 28
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.628
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.887
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.834
+DIDI perc. index in the training set, for the model: 0.460
+DIDI perc. index in the test set, for the model: 0.668
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.621
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.633
+--- Training done
+=== Iteration 28 is over
+Iteration: 29
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 60.214
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.888
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 0.834
+DIDI perc. index in the training set, for the model: 0.466
+DIDI perc. index in the test set, for the model: 0.675
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.623
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.635
+--- Training done
+=== Iteration 29 is over
+>>> The MACS process is over
+
+### Collecting results
+Initial train set_DIDI perc. index: 1.0000 (0.0000)
+Initial test set_DIDI perc. index: 1.0000 (0.0000)
+Pretrained model, train set cost_DIDI perc. index: 0.9496 (0.0172)
+Pretrained model, test set cost_DIDI perc. index: 0.9491 (0.1075)
+Pretrained model, train set score_MSE: 0.0154 (0.0001)
+Pretrained model, train set score_R2: 0.6514 (0.0017)
+Pretrained model, test set score_MSE: 0.0155 (0.0004)
+Pretrained model, test set score_R2: 0.6490 (0.0092)
+Adj. Targets it 0, train set cost_DIDI perc. index: 0.2000 (0.0000)
+Adj. Targets it 0, test set cost_MSE: 0.0049 (0.0001)
+Adj. Targets it 0, test set cost_R2: 0.8878 (0.0014)
+Trained model it 0, train set cost_DIDI perc. index: 0.5498 (0.0243)
+Trained model it 0, test set cost_DIDI perc. index: 0.5252 (0.1634)
+Trained model it 0, train set score_MSE: 0.0161 (0.0001)
+Trained model it 0, train set score_R2: 0.6356 (0.0033)
+Trained model it 0, test set score_MSE: 0.0161 (0.0004)
+Trained model it 0, test set score_R2: 0.6335 (0.0088)
+Adj. Targets it 1, train set cost_DIDI perc. index: 0.2000 (0.0000)
+Adj. Targets it 1, test set cost_MSE: 0.0048 (0.0001)
+Adj. Targets it 1, test set cost_R2: 0.8918 (0.0016)
+Trained model it 1, train set cost_DIDI perc. index: 0.5100 (0.0216)
+Trained model it 1, test set cost_DIDI perc. index: 0.4799 (0.1736)
+Trained model it 1, train set score_MSE: 0.0164 (0.0001)
+Trained model it 1, train set score_R2: 0.6284 (0.0022)
+Trained model it 1, test set score_MSE: 0.0165 (0.0004)
+Trained model it 1, test set score_R2: 0.6262 (0.0102)
+Adj. Targets it 2, train set cost_DIDI perc. index: 0.2000 (0.0000)
+Adj. Targets it 2, test set cost_MSE: 0.0049 (0.0001)
+Adj. Targets it 2, test set cost_R2: 0.8893 (0.0017)
+Trained model it 2, train set cost_DIDI perc. index: 0.4791 (0.0197)
+Trained model it 2, test set cost_DIDI perc. index: 0.4497 (0.1749)
+Trained model it 2, train set score_MSE: 0.0166 (0.0001)
+Trained model it 2, train set score_R2: 0.6242 (0.0031)
+Trained model it 2, test set score_MSE: 0.0166 (0.0004)
+Trained model it 2, test set score_R2: 0.6223 (0.0093)
+Adj. Targets it 3, train set cost_DIDI perc. index: 0.2000 (0.0000)
+Adj. Targets it 3, test set cost_MSE: 0.0049 (0.0001)
+Adj. Targets it 3, test set cost_R2: 0.8888 (0.0018)
+Trained model it 3, train set cost_DIDI perc. index: 0.4850 (0.0203)
+Trained model it 3, test set cost_DIDI perc. index: 0.4601 (0.1828)
+Trained model it 3, train set score_MSE: 0.0166 (0.0001)
+Trained model it 3, train set score_R2: 0.6237 (0.0027)
+Trained model it 3, test set score_MSE: 0.0167 (0.0004)
+Trained model it 3, test set score_R2: 0.6217 (0.0099)
+Adj. Targets it 4, train set cost_DIDI perc. index: 0.2000 (0.0000)
+Adj. Targets it 4, test set cost_MSE: 0.0049 (0.0001)
+Adj. Targets it 4, test set cost_R2: 0.8885 (0.0015)
+Trained model it 4, train set cost_DIDI perc. index: 0.4810 (0.0158)
+Trained model it 4, test set cost_DIDI perc. index: 0.4599 (0.1684)
+Trained model it 4, train set score_MSE: 0.0166 (0.0001)
+Trained model it 4, train set score_R2: 0.6235 (0.0031)
+Trained model it 4, test set score_MSE: 0.0167 (0.0004)
+Trained model it 4, test set score_R2: 0.6213 (0.0094)
+Adj. Targets it 5, train set cost_DIDI perc. index: 0.2000 (0.0000)
+Adj. Targets it 5, test set cost_MSE: 0.0049 (0.0001)
+Adj. Targets it 5, test set cost_R2: 0.8884 (0.0017)
+Trained model it 5, train set cost_DIDI perc. index: 0.4797 (0.0132)
+Trained model it 5, test set cost_DIDI perc. index: 0.4550 (0.1853)
+Trained model it 5, train set score_MSE: 0.0166 (0.0001)
+Trained model it 5, train set score_R2: 0.6228 (0.0017)
+Trained model it 5, test set score_MSE: 0.0167 (0.0005)
+Trained model it 5, test set score_R2: 0.6207 (0.0108)
+Adj. Targets it 6, train set cost_DIDI perc. index: 0.2000 (0.0000)
+Adj. Targets it 6, test set cost_MSE: 0.0049 (0.0001)
+Adj. Targets it 6, test set cost_R2: 0.8880 (0.0025)
+Trained model it 6, train set cost_DIDI perc. index: 0.4740 (0.0180)
+Trained model it 6, test set cost_DIDI perc. index: 0.4460 (0.1922)
+Trained model it 6, train set score_MSE: 0.0166 (0.0001)
+Trained model it 6, train set score_R2: 0.6232 (0.0016)
+Trained model it 6, test set score_MSE: 0.0167 (0.0005)
+Trained model it 6, test set score_R2: 0.6209 (0.0112)
+Adj. Targets it 7, train set cost_DIDI perc. index: 0.2000 (0.0000)
+Adj. Targets it 7, test set cost_MSE: 0.0049 (0.0001)
+Adj. Targets it 7, test set cost_R2: 0.8886 (0.0012)
+Trained model it 7, train set cost_DIDI perc. index: 0.4652 (0.0162)
+Trained model it 7, test set cost_DIDI perc. index: 0.4422 (0.1857)
+Trained model it 7, train set score_MSE: 0.0167 (0.0001)
+Trained model it 7, train set score_R2: 0.6214 (0.0029)
+Trained model it 7, test set score_MSE: 0.0168 (0.0004)
+Trained model it 7, test set score_R2: 0.6191 (0.0097)
+Adj. Targets it 8, train set cost_DIDI perc. index: 0.2000 (0.0000)
+Adj. Targets it 8, test set cost_MSE: 0.0049 (0.0001)
+Adj. Targets it 8, test set cost_R2: 0.8878 (0.0014)
+Trained model it 8, train set cost_DIDI perc. index: 0.4808 (0.0157)
+Trained model it 8, test set cost_DIDI perc. index: 0.4592 (0.1796)
+Trained model it 8, train set score_MSE: 0.0166 (0.0002)
+Trained model it 8, train set score_R2: 0.6230 (0.0038)
+Trained model it 8, test set score_MSE: 0.0167 (0.0004)
+Trained model it 8, test set score_R2: 0.6210 (0.0090)
+Adj. Targets it 9, train set cost_DIDI perc. index: 0.2000 (0.0000)
+Adj. Targets it 9, test set cost_MSE: 0.0049 (0.0001)
+Adj. Targets it 9, test set cost_R2: 0.8881 (0.0016)
+Trained model it 9, train set cost_DIDI perc. index: 0.4762 (0.0148)
+Trained model it 9, test set cost_DIDI perc. index: 0.4487 (0.1744)
+Trained model it 9, train set score_MSE: 0.0166 (0.0002)
+Trained model it 9, train set score_R2: 0.6233 (0.0039)
+Trained model it 9, test set score_MSE: 0.0167 (0.0004)
+Trained model it 9, test set score_R2: 0.6212 (0.0090)
+Adj. Targets it 10, train set cost_DIDI perc. index: 0.2000 (0.0000)
+Adj. Targets it 10, test set cost_MSE: 0.0049 (0.0000)
+Adj. Targets it 10, test set cost_R2: 0.8882 (0.0012)
+Trained model it 10, train set cost_DIDI perc. index: 0.4789 (0.0149)
+Trained model it 10, test set cost_DIDI perc. index: 0.4527 (0.1729)
+Trained model it 10, train set score_MSE: 0.0166 (0.0001)
+Trained model it 10, train set score_R2: 0.6232 (0.0029)
+Trained model it 10, test set score_MSE: 0.0167 (0.0004)
+Trained model it 10, test set score_R2: 0.6213 (0.0103)
+Adj. Targets it 11, train set cost_DIDI perc. index: 0.2000 (0.0000)
+Adj. Targets it 11, test set cost_MSE: 0.0049 (0.0001)
+Adj. Targets it 11, test set cost_R2: 0.8882 (0.0019)
+Trained model it 11, train set cost_DIDI perc. index: 0.4820 (0.0104)
+Trained model it 11, test set cost_DIDI perc. index: 0.4562 (0.1710)
+Trained model it 11, train set score_MSE: 0.0165 (0.0002)
+Trained model it 11, train set score_R2: 0.6246 (0.0034)
+Trained model it 11, test set score_MSE: 0.0166 (0.0004)
+Trained model it 11, test set score_R2: 0.6227 (0.0096)
+Adj. Targets it 12, train set cost_DIDI perc. index: 0.2000 (0.0000)
+Adj. Targets it 12, test set cost_MSE: 0.0049 (0.0001)
+Adj. Targets it 12, test set cost_R2: 0.8882 (0.0011)
+Trained model it 12, train set cost_DIDI perc. index: 0.4814 (0.0168)
+Trained model it 12, test set cost_DIDI perc. index: 0.4548 (0.1719)
+Trained model it 12, train set score_MSE: 0.0166 (0.0002)
+Trained model it 12, train set score_R2: 0.6241 (0.0034)
+Trained model it 12, test set score_MSE: 0.0166 (0.0004)
+Trained model it 12, test set score_R2: 0.6221 (0.0094)
+Adj. Targets it 13, train set cost_DIDI perc. index: 0.2000 (0.0000)
+Adj. Targets it 13, test set cost_MSE: 0.0049 (0.0000)
+Adj. Targets it 13, test set cost_R2: 0.8880 (0.0006)
+Trained model it 13, train set cost_DIDI perc. index: 0.4703 (0.0098)
+Trained model it 13, test set cost_DIDI perc. index: 0.4427 (0.1811)
+Trained model it 13, train set score_MSE: 0.0166 (0.0001)
+Trained model it 13, train set score_R2: 0.6224 (0.0026)
+Trained model it 13, test set score_MSE: 0.0167 (0.0004)
+Trained model it 13, test set score_R2: 0.6202 (0.0103)
+Adj. Targets it 14, train set cost_DIDI perc. index: 0.2000 (0.0000)
+Adj. Targets it 14, test set cost_MSE: 0.0049 (0.0001)
+Adj. Targets it 14, test set cost_R2: 0.8878 (0.0017)
+Trained model it 14, train set cost_DIDI perc. index: 0.4757 (0.0110)
+Trained model it 14, test set cost_DIDI perc. index: 0.4501 (0.1757)
+Trained model it 14, train set score_MSE: 0.0167 (0.0001)
+Trained model it 14, train set score_R2: 0.6213 (0.0025)
+Trained model it 14, test set score_MSE: 0.0168 (0.0004)
+Trained model it 14, test set score_R2: 0.6195 (0.0103)
+Adj. Targets it 15, train set cost_DIDI perc. index: 0.2000 (0.0000)
+Adj. Targets it 15, test set cost_MSE: 0.0049 (0.0001)
+Adj. Targets it 15, test set cost_R2: 0.8879 (0.0012)
+Trained model it 15, train set cost_DIDI perc. index: 0.4751 (0.0212)
+Trained model it 15, test set cost_DIDI perc. index: 0.4427 (0.1854)
+Trained model it 15, train set score_MSE: 0.0167 (0.0001)
+Trained model it 15, train set score_R2: 0.6218 (0.0020)
+Trained model it 15, test set score_MSE: 0.0167 (0.0005)
+Trained model it 15, test set score_R2: 0.6203 (0.0111)
+Adj. Targets it 16, train set cost_DIDI perc. index: 0.2000 (0.0000)
+Adj. Targets it 16, test set cost_MSE: 0.0049 (0.0001)
+Adj. Targets it 16, test set cost_R2: 0.8886 (0.0017)
+Trained model it 16, train set cost_DIDI perc. index: 0.4855 (0.0204)
+Trained model it 16, test set cost_DIDI perc. index: 0.4570 (0.1789)
+Trained model it 16, train set score_MSE: 0.0166 (0.0001)
+Trained model it 16, train set score_R2: 0.6234 (0.0016)
+Trained model it 16, test set score_MSE: 0.0167 (0.0005)
+Trained model it 16, test set score_R2: 0.6213 (0.0116)
+Adj. Targets it 17, train set cost_DIDI perc. index: 0.2000 (0.0000)
+Adj. Targets it 17, test set cost_MSE: 0.0049 (0.0001)
+Adj. Targets it 17, test set cost_R2: 0.8882 (0.0024)
+Trained model it 17, train set cost_DIDI perc. index: 0.4819 (0.0170)
+Trained model it 17, test set cost_DIDI perc. index: 0.4524 (0.1850)
+Trained model it 17, train set score_MSE: 0.0166 (0.0001)
+Trained model it 17, train set score_R2: 0.6233 (0.0024)
+Trained model it 17, test set score_MSE: 0.0167 (0.0005)
+Trained model it 17, test set score_R2: 0.6210 (0.0113)
+Adj. Targets it 18, train set cost_DIDI perc. index: 0.2000 (0.0000)
+Adj. Targets it 18, test set cost_MSE: 0.0049 (0.0001)
+Adj. Targets it 18, test set cost_R2: 0.8880 (0.0024)
+Trained model it 18, train set cost_DIDI perc. index: 0.4885 (0.0170)
+Trained model it 18, test set cost_DIDI perc. index: 0.4667 (0.1644)
+Trained model it 18, train set score_MSE: 0.0166 (0.0001)
+Trained model it 18, train set score_R2: 0.6237 (0.0025)
+Trained model it 18, test set score_MSE: 0.0167 (0.0005)
+Trained model it 18, test set score_R2: 0.6220 (0.0106)
+Adj. Targets it 19, train set cost_DIDI perc. index: 0.2000 (0.0000)
+Adj. Targets it 19, test set cost_MSE: 0.0049 (0.0001)
+Adj. Targets it 19, test set cost_R2: 0.8884 (0.0015)
+Trained model it 19, train set cost_DIDI perc. index: 0.4834 (0.0229)
+Trained model it 19, test set cost_DIDI perc. index: 0.4541 (0.1913)
+Trained model it 19, train set score_MSE: 0.0166 (0.0001)
+Trained model it 19, train set score_R2: 0.6224 (0.0028)
+Trained model it 19, test set score_MSE: 0.0167 (0.0005)
+Trained model it 19, test set score_R2: 0.6201 (0.0122)
+Adj. Targets it 20, train set cost_DIDI perc. index: 0.2000 (0.0000)
+Adj. Targets it 20, test set cost_MSE: 0.0049 (0.0001)
+Adj. Targets it 20, test set cost_R2: 0.8888 (0.0015)
+Trained model it 20, train set cost_DIDI perc. index: 0.4767 (0.0090)
+Trained model it 20, test set cost_DIDI perc. index: 0.4497 (0.1870)
+Trained model it 20, train set score_MSE: 0.0166 (0.0001)
+Trained model it 20, train set score_R2: 0.6228 (0.0024)
+Trained model it 20, test set score_MSE: 0.0167 (0.0004)
+Trained model it 20, test set score_R2: 0.6206 (0.0103)
+Adj. Targets it 21, train set cost_DIDI perc. index: 0.2000 (0.0000)
+Adj. Targets it 21, test set cost_MSE: 0.0049 (0.0001)
+Adj. Targets it 21, test set cost_R2: 0.8890 (0.0014)
+Trained model it 21, train set cost_DIDI perc. index: 0.4921 (0.0222)
+Trained model it 21, test set cost_DIDI perc. index: 0.4667 (0.1727)
+Trained model it 21, train set score_MSE: 0.0166 (0.0001)
+Trained model it 21, train set score_R2: 0.6229 (0.0031)
+Trained model it 21, test set score_MSE: 0.0167 (0.0005)
+Trained model it 21, test set score_R2: 0.6208 (0.0103)
+Adj. Targets it 22, train set cost_DIDI perc. index: 0.2000 (0.0000)
+Adj. Targets it 22, test set cost_MSE: 0.0049 (0.0001)
+Adj. Targets it 22, test set cost_R2: 0.8880 (0.0014)
+Trained model it 22, train set cost_DIDI perc. index: 0.4749 (0.0149)
+Trained model it 22, test set cost_DIDI perc. index: 0.4456 (0.1818)
+Trained model it 22, train set score_MSE: 0.0166 (0.0001)
+Trained model it 22, train set score_R2: 0.6232 (0.0030)
+Trained model it 22, test set score_MSE: 0.0167 (0.0004)
+Trained model it 22, test set score_R2: 0.6214 (0.0102)
+Adj. Targets it 23, train set cost_DIDI perc. index: 0.2000 (0.0000)
+Adj. Targets it 23, test set cost_MSE: 0.0049 (0.0001)
+Adj. Targets it 23, test set cost_R2: 0.8885 (0.0018)
+Trained model it 23, train set cost_DIDI perc. index: 0.4749 (0.0183)
+Trained model it 23, test set cost_DIDI perc. index: 0.4468 (0.1853)
+Trained model it 23, train set score_MSE: 0.0166 (0.0001)
+Trained model it 23, train set score_R2: 0.6231 (0.0033)
+Trained model it 23, test set score_MSE: 0.0167 (0.0004)
+Trained model it 23, test set score_R2: 0.6210 (0.0097)
+Adj. Targets it 24, train set cost_DIDI perc. index: 0.2000 (0.0000)
+Adj. Targets it 24, test set cost_MSE: 0.0049 (0.0001)
+Adj. Targets it 24, test set cost_R2: 0.8889 (0.0018)
+Trained model it 24, train set cost_DIDI perc. index: 0.4909 (0.0154)
+Trained model it 24, test set cost_DIDI perc. index: 0.4642 (0.1765)
+Trained model it 24, train set score_MSE: 0.0166 (0.0001)
+Trained model it 24, train set score_R2: 0.6229 (0.0024)
+Trained model it 24, test set score_MSE: 0.0167 (0.0005)
+Trained model it 24, test set score_R2: 0.6211 (0.0104)
+Adj. Targets it 25, train set cost_DIDI perc. index: 0.2000 (0.0000)
+Adj. Targets it 25, test set cost_MSE: 0.0049 (0.0001)
+Adj. Targets it 25, test set cost_R2: 0.8884 (0.0020)
+Trained model it 25, train set cost_DIDI perc. index: 0.4798 (0.0214)
+Trained model it 25, test set cost_DIDI perc. index: 0.4529 (0.1657)
+Trained model it 25, train set score_MSE: 0.0167 (0.0002)
+Trained model it 25, train set score_R2: 0.6217 (0.0037)
+Trained model it 25, test set score_MSE: 0.0167 (0.0004)
+Trained model it 25, test set score_R2: 0.6199 (0.0091)
+Adj. Targets it 26, train set cost_DIDI perc. index: 0.2000 (0.0000)
+Adj. Targets it 26, test set cost_MSE: 0.0049 (0.0001)
+Adj. Targets it 26, test set cost_R2: 0.8877 (0.0019)
+Trained model it 26, train set cost_DIDI perc. index: 0.4850 (0.0164)
+Trained model it 26, test set cost_DIDI perc. index: 0.4582 (0.1702)
+Trained model it 26, train set score_MSE: 0.0166 (0.0002)
+Trained model it 26, train set score_R2: 0.6236 (0.0034)
+Trained model it 26, test set score_MSE: 0.0167 (0.0004)
+Trained model it 26, test set score_R2: 0.6218 (0.0097)
+Adj. Targets it 27, train set cost_DIDI perc. index: 0.2000 (0.0000)
+Adj. Targets it 27, test set cost_MSE: 0.0049 (0.0001)
+Adj. Targets it 27, test set cost_R2: 0.8876 (0.0013)
+Trained model it 27, train set cost_DIDI perc. index: 0.4851 (0.0115)
+Trained model it 27, test set cost_DIDI perc. index: 0.4551 (0.1782)
+Trained model it 27, train set score_MSE: 0.0165 (0.0001)
+Trained model it 27, train set score_R2: 0.6243 (0.0030)
+Trained model it 27, test set score_MSE: 0.0166 (0.0004)
+Trained model it 27, test set score_R2: 0.6222 (0.0100)
+Adj. Targets it 28, train set cost_DIDI perc. index: 0.2000 (0.0000)
+Adj. Targets it 28, test set cost_MSE: 0.0049 (0.0001)
+Adj. Targets it 28, test set cost_R2: 0.8887 (0.0020)
+Trained model it 28, train set cost_DIDI perc. index: 0.4774 (0.0109)
+Trained model it 28, test set cost_DIDI perc. index: 0.4493 (0.1780)
+Trained model it 28, train set score_MSE: 0.0166 (0.0001)
+Trained model it 28, train set score_R2: 0.6242 (0.0024)
+Trained model it 28, test set score_MSE: 0.0167 (0.0005)
+Trained model it 28, test set score_R2: 0.6217 (0.0117)
+Adj. Targets it 29, train set cost_DIDI perc. index: 0.2000 (0.0000)
+Adj. Targets it 29, test set cost_MSE: 0.0049 (0.0001)
+Adj. Targets it 29, test set cost_R2: 0.8886 (0.0023)
+Trained model it 29, train set cost_DIDI perc. index: 0.4776 (0.0180)
+Trained model it 29, test set cost_DIDI perc. index: 0.4506 (0.1869)
+Trained model it 29, train set score_MSE: 0.0166 (0.0001)
+Trained model it 29, train set score_R2: 0.6240 (0.0023)
+Trained model it 29, test set score_MSE: 0.0166 (0.0005)
+Trained model it 29, test set score_R2: 0.6221 (0.0114)
+### Processing fold 99
+>>> Starting the MACS process
+DIDI perc. index in the training set: 1.000
+DIDI perc. index in the test set: 1.000
+Predictions for the untrained model are not available
+--- Starting pretraining
+Pretraining time: 1.033
+DIDI perc. index in the training set, for the pretrained model: 0.944
+DIDI perc. index in the test set, for the pretrained model: 0.940
+MSE on the train set, for the pretrained model: 0.015
+R2 on the train set, for the pretrained model: 0.650
+MSE on the test set, for the pretrained model: 0.015
+R2 on the test set, for the pretrained model: 0.661
+--- Pretraining done
+Iteration: 0
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 80.864
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.887
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 1.038
+DIDI perc. index in the training set, for the model: 0.517
+DIDI perc. index in the test set, for the model: 0.549
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.637
+MSE on the test set, for the model: 0.015
+R2 on the test set, for the model: 0.648
+--- Training done
+=== Iteration 0 is over
+Iteration: 1
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 82.001
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.892
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 1.034
+DIDI perc. index in the training set, for the model: 0.505
+DIDI perc. index in the test set, for the model: 0.541
+MSE on the train set, for the model: 0.016
+R2 on the train set, for the model: 0.629
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.641
+--- Training done
+=== Iteration 1 is over
+Iteration: 2
+=== Starting iteration
+--- Starting label adjustment
+Label adjustment time: 81.681
+DIDI perc. index in the training set, for the adjusted targets: 0.200
+MSE on the train set, for the adjusted targets: 0.005
+R2 on the train set, for the adjusted targets: 0.891
+--- Label adjustment done
+--- Starting to train the learner
+Training time: 1.036
+DIDI perc. index in the training set, for the model: 0.495
+DIDI perc. index in the test set, for the model: 0.529
+MSE on the train set, for the model: 0.017
+R2 on the train set, for the model: 0.625
+MSE on the test set, for the model: 0.016
+R2 on the test set, for the model: 0.636
+--- Training done
+=== Iteration 2 is over
+Iteration: 3
+=== Starting iteration
+--- Starting label adjustment
