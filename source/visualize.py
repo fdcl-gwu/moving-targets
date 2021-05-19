@@ -90,7 +90,30 @@ def analyze_results():
     # Comparison between two results
     plt.rcParams['font.size'] = 14
     plt.style.use('seaborn-darkgrid')
-    if N_files == 2:
+    if N_files == 1:
+        def plot_measure(R2, ylims='auto'):
+            plt.figure()
+            Std = 'Std ' + R2
+            i_file = 0
+            results = data[args.name[i_file]]
+            inf = info[args.name[i_file]]
+            plt.errorbar(np.array(range(N_iter)), results[R2].to_numpy(),
+                    yerr=results[Std].to_numpy(), fmt='-o', c='b',
+                    label=inf['algo']+' '+inf['alpha'], ls='--', capsize=5)
+            plt.legend()
+            plt.xlabel('Iterations')
+            plt.ylabel(R2 + ' (with Std)')
+            plt.title([(key, inf[key]) for key in ['dataset','loss']])
+            # plt.ylim(ylims)
+            # plt.show()
+            plt.savefig(R2.replace(' ','_')+'_'+inf['dataset'][:2]+'_'+
+                    inf['loss']+'_'+inf['alpha'][:3]+'.png')
+            plt.close()
+
+        for meas in ['R2 tr', 'DIDI tr', 'R2 ts']:
+            plot_measure(meas)
+
+    elif N_files == 2:
         def plot_measure(R2, ylims='auto'):
             plt.figure()
             Std = 'Std ' + R2

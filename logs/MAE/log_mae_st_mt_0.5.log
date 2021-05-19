@@ -1,6 +1,8 @@
 dataset: student
 nfolds: 5
 mtype: fairness
+implement: cplex
+loss: mae
 algo: movtar
 ltype: gb
 iterations: 30

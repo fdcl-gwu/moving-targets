@@ -1,6 +1,8 @@
 dataset: blackfriday
 nfolds: 5
 mtype: fairness
+implement: cplex
+loss: mae
 algo: affine
 ltype: gb
 iterations: 30
