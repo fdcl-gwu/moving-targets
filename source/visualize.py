@@ -23,6 +23,9 @@ measures = {
     'Trained model it {}, train set score_R2 Std': 'Std R2 tr',
     'Trained model it {}, test set score_MSE Std': 'Std MSE ts',
     'Trained model it {}, test set score_R2 Std': 'Std R2 ts',
+
+    'R2 on the train set, for the model': 'R2 tr fold',
+    'DIDI perc. index in the training set, for the model': 'DIDI tr fold',
 }
 
 
@@ -59,9 +62,30 @@ def analyze_results():
                 break
 
         N_iter = int(inf['iterations'])
+        meas_keys = list(measures.keys())
         columns = list(measures.values())
-        N_measures = int(len(columns)/2)
+        N_measures = 9
         results = pd.DataFrame(np.full(fill_value=np.nan, shape=(N_iter, len(columns))), columns=columns)
+
+        fold = 0
+        start_fold = False
+        rows = dict()
+        for key in meas_keys:
+            rows[key] = 0
+        for num, line in enumerate(lines):
+            x = line.strip()
+            if not start_fold and x.startswith('### Processing fold {}'.format(fold)):
+                idx_fold = num
+                start_fold = True
+            if start_fold and (': ' in x):
+                name, val = x.split(': ')
+                if name in meas_keys[-2:]:
+                    _row = rows[name]
+                    _name = measures[name]
+                    results[_name].iloc[_row] = float(val)
+                    rows[name] += 1
+            if start_fold and x.startswith('>>> The MACS process is over'):
+                break
 
         for it in range(N_iter):
             for i in range(N_measures):
@@ -77,7 +101,8 @@ def analyze_results():
         print('\n')
         print('The results for the final 2 iterations of {} with these parameters,'.format(filename))
         print([(key, inf[key]) for key in ['dataset','loss','alpha']])
-        print(results[[columns[col] for col in [3,4,6,8,12,13,15,17]]].iloc[-2:])
+        pd.options.display.float_format = "{:.3f}".format
+        print(results[[columns[col] for col in [6,15,3,12,8,17,4,13]]].iloc[-2:])
         data[filename] = results
         info[filename] = inf
         out_df = pd.DataFrame(results)
@@ -110,7 +135,23 @@ def analyze_results():
                     inf['loss']+'_'+inf['alpha'][:3]+'.png')
             plt.close()
 
-        for meas in ['R2 tr', 'DIDI tr', 'R2 ts']:
+            # plt.figure()
+            # i_file = 0
+            # results = data[args.name[i_file]]
+            # inf = info[args.name[i_file]]
+            # plt.plot(np.array(range(N_iter)), results[R2+ ' fold'].to_numpy(),
+            #         c='b', label=inf['algo']+' '+inf['alpha'])
+            # plt.legend()
+            # plt.xlabel('Iterations')
+            # plt.ylabel(R2 + ' fold')
+            # plt.title([(key, inf[key]) for key in ['dataset','loss']])
+            # # plt.ylim(ylims)
+            # # plt.show()
+            # plt.savefig((R2 + ' fold').replace(' ','_')+'_'+inf['dataset'][:2]+'_'+
+            #         inf['loss']+'_'+inf['alpha'][:3]+'.png')
+            # plt.close()
+
+        for meas in ['R2 tr', 'DIDI tr']:
             plot_measure(meas)
 
     elif N_files == 2:
@@ -137,10 +178,31 @@ def analyze_results():
             # plt.ylim(ylims)
             # plt.show()
             plt.savefig(R2.replace(' ','_')+'_'+inf['dataset'][:2]+'_'+
-                    inf['loss']+'_'+inf['alpha'][:3]+'.png')
+                    inf['loss']+'_'+inf['alpha'][:3]+'.eps')
             plt.close()
 
-        for meas in ['R2 tr', 'DIDI tr', 'R2 ts']:
+            # plt.figure()
+            # i_file = 0
+            # results = data[args.name[i_file]]
+            # inf = info[args.name[i_file]]
+            # plt.plot(np.array(range(N_iter)), results[R2+ ' fold'].to_numpy(),
+            #         c='r', label=inf['algo']+' '+inf['alpha'])
+            # i_file = 1
+            # results = data[args.name[i_file]]
+            # inf = info[args.name[i_file]]
+            # plt.plot(np.array(range(N_iter)), results[R2+ ' fold'].to_numpy(),
+            #         c='b', label=inf['algo']+' '+inf['alpha'])
+            # plt.legend()
+            # plt.xlabel('Iterations')
+            # plt.ylabel(R2 + ' fold')
+            # plt.title([(key, inf[key]) for key in ['dataset','loss']])
+            # # plt.ylim(ylims)
+            # # plt.show()
+            # plt.savefig((R2 + ' fold').replace(' ','_')+'_'+inf['dataset'][:2]+'_'+
+            #         inf['loss']+'_'+inf['alpha'][:3]+'.png')
+            # plt.close()
+
+        for meas in ['R2 tr', 'DIDI tr']:
             plot_measure(meas)
 
 if __name__ == '__main__':
